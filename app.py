@@ -23,7 +23,7 @@ def home():
     books = mongo.db.books.find()
     return render_template("home.html", books=books)
 
-
+# User info 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -85,7 +85,10 @@ def logout():
     session.pop("user")
     return redirect(url_for("home"))
 
-
+# Manage Books 
+@app.route("/add_book")
+def add_book():
+    return render_template("add_book.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(
