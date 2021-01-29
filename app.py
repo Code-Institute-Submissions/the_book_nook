@@ -85,10 +85,26 @@ def logout():
     session.pop("user")
     return redirect(url_for("home"))
 
-# Manage Books 
-@app.route("/add_book")
+
+# Manage Books
+@app.route("/add_book", methods=["GET", "POST"])
 def add_book():
-    return render_template("add_book.html")
+    if request.method == "POST":
+        book = {
+            "book_name": request.form.get("book_name"),
+            "book_author": request.form.get("book_author"),
+            "book_category": request.form.get("book_category"),
+            "book_description": request.form.get("book_description"),
+            "book_image_url": request.form.get("book_image_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.books.insert_one(book)
+        flash("Book is now added to your collection!")
+        return redirect(url_for("books"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_book.html", categories=categories)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(

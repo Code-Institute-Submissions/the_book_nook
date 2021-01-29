@@ -8,6 +8,8 @@ body {
     background-color: beige;
 }
 
+/* --- Navigation list */
+
 nav {
     height: 10vh;
     width: 100%;
@@ -22,11 +24,24 @@ nav {
     display: flex;
     list-style-type: none;
     justify-content: space-between;
-    background-color: white;
-    
+    background-color: white; 
 }
 
 .navigation-list li a {
     text-decoration: none;
     margin-right: 15px;
+}
+
+/* --- Form to add book */
+
+.add-book-form {
+    height: 40vh;
+    width: 40%;
+    margin: auto;
+    display: block;
+}
+
+label, input, textarea {
+    display: block;
+    margin: 5px;
 }
