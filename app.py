@@ -21,11 +21,28 @@ mongo = PyMongo(app)
 @app.route("/")
 def home():
     books = mongo.db.books.find()
-    return render_template("home.html", books = books)
+    return render_template("home.html", books=books)
 
 
-@app.route("/register", methods= ["GET", "POST"])
+@app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Sorry, this username is taken, try another!")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        session["user"] = request.form.get("username").lower()
+        flash("You have been succesfully registered!")
+
     return render_template("register.html")
 
 
