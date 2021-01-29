@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<a href="{{ url_for('add_category') }}">Add New Category</a>
 {% for category in categories %}
 <div>
     <span>{{ category.book_category }}</span>

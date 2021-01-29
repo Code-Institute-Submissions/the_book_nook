@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="add-book-form">
+<form method="POST" action="{{ url_for('add_category') }}">
+    <label for="book_category">New Category</label>
+    <input type="text" name="book_category" id="book_category" minlength="3" maxlength="20" required>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+{% endblock %}
