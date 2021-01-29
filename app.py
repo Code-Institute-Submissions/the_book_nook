@@ -19,9 +19,9 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def home():
+def books():
     books = mongo.db.books.find()
-    return render_template("home.html", books=books)
+    return render_template("books.html", books=books)
 
 # User info 
 @app.route("/register", methods=["GET", "POST"])
@@ -83,7 +83,7 @@ def profile(username):
 def logout():
     flash("You have now been logged out! See you next time!")
     session.pop("user")
-    return redirect(url_for("home"))
+    return redirect(url_for("books"))
 
 
 # Manage Books
@@ -129,7 +129,7 @@ def edit_book(book_id):
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Book is now deleted")
-    return redirect(url_for("home"))
+    return redirect(url_for("books"))
 
 
 # Manage Categories
@@ -161,9 +161,16 @@ def edit_category(category_id):
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Updated")
         return redirect(url_for("categories"))
-        
+
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category Deleted")
+    return redirect(url_for("categories"))
 
 
 if __name__ == "__main__":

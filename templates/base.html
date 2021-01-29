@@ -14,8 +14,7 @@
             </div>
             <div>
                 <ul class="navigation-list">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="">Book Collection</a></li>
+                    <li><a href="{{ url_for('books') }}">Our Book Collection</a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                     <li><a href="">My Books</a></li>
