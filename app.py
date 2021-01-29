@@ -119,10 +119,17 @@ def edit_book(book_id):
         }
         mongo.db.books.update({"_id": ObjectId(book_id)})
         flash("Book Updated!")
-        
+
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     categories = mongo.db.categories.find().sort("book_category", 1)
     return render_template("edit_book.html", book=book, categories=categories)
+
+
+@app.route("/delete_book/<book_id>")
+def delete_book(book_id):
+    mongo.db.books.remove({"_id": ObjectId(book_id)})
+    flash("Book is now deleted")
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
