@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>The Book Nook</title>
 </head>
 <body>
@@ -13,5 +14,6 @@
     </header>
     {% block content %}
     {% endblock %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
