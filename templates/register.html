@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="registration-form">
+<form method="POST" action="{{ url_for('register') }}">
+    <label for="username">Choose Username</label>
+    <input type="text" name="username" id="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" >
+    <label for="password">Choose Password</label>
+    <input type="password" name="password" id="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" >
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+{% endblock %}
