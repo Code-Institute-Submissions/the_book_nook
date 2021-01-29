@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for category in categories %}
+<div>
+    <span>{{ category.book_category }}</span>
+</div>
+{% endfor %}
+
+{% endblock %}
