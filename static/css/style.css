@@ -32,6 +32,17 @@ nav {
     margin-right: 15px;
 }
 
+.book-container {
+    width: 30%;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.book-image {
+    height: 20vh;
+}
+
 /* --- Form to add book */
 
 .add-book-form {
