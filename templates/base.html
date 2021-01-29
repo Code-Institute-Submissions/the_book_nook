@@ -14,13 +14,13 @@
             </div>
             <div>
                 <ul class="navigation-list">
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="">Book Collection</a></li>
                     <li><a href="">My Profile</a></li>
                     <li><a href="">My Books</a></li>
                     <li><a href="">Log Out</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="">Log In</a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
                 </ul>
         </nav>
     </header>
