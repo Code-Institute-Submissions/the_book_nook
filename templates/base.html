@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/21d46fbcca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>The Book Nook</title>
 </head>
@@ -11,6 +12,9 @@
         <nav>
             <div>
                 <h1 class="logo">The Book Nook</h1>
+            </div>
+            <div>
+                <i class="fas fa-bars"></i>
             </div>
             <div>
                 <ul class="navigation-list">
@@ -27,6 +31,7 @@
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     {% endif %}
                 </ul>
+            </div>
         </nav>
     </header>
     <section>
