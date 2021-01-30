@@ -8,22 +8,27 @@ body {
     background-color: beige;
 }
 
-/* --- Navigation list */
+/* --- Header & Navigation list */
 
 nav {
     height: 10vh;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: lightcoral;
+}
+
+.logo {
+    letter-spacing: 3px;
 }
 
 .navigation-list {
     width: 100%;
+    height: 10vh;
     display: flex;
+    align-items: center;
     list-style-type: none;
-    justify-content: space-between;
     background-color: white; 
 }
 
@@ -32,6 +37,15 @@ nav {
     margin-right: 15px;
 }
 
+/* ---- Books Collection & Search Site */
+
+.headline-book-collection {
+    text-align: center;
+    margin: 10vh;
+}
+.book-collection-container {
+    display: flex;
+}
 .book-container {
     width: 30%;
     margin: auto;
@@ -43,7 +57,7 @@ nav {
     height: 20vh;
 }
 
-/* --- Form to add book */
+/* --- User Form to add book */
 
 .add-book-form {
     height: 40vh;

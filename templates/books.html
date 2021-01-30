@@ -1,12 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Our Book Collection</h2>
-   
+<h1 class="headline-book-collection">Our Book Collection</h1>
+<div>
+    <form action="{{ url_for('search')}}" method="POST">
+        <input type="text" name="query" id="query" minlength="3" required>
+        <label for="query">Search through our book collection</label>
+        <a href="{{ url_for('books') }}">Reset</a>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+   <div class="book-collection-container">
     {% for book in books %}
     <div class="book-container">
     <p><img class="book-image" src="{{ book.book_image_url }}"></p>
     <p>Name: {{ book.book_name }}</p>
     <p>Author: {{ book.book_author }}</p>
+    <p>Category: {{book.book_category }}</p>
     <p>About: {{ book.book_description }} </p>
     <p>Created by: {{ book.created_by }} </p>
     {% if session.user | lower == book.created_by | lower %}
@@ -15,5 +25,7 @@
     {% endif %}
     </div>
     {% endfor %}
-    
+   </div>
+ 
+ 
 {% endblock %}

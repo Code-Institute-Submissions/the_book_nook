@@ -23,7 +23,20 @@ def books():
     books = mongo.db.books.find()
     return render_template("books.html", books=books)
 
-# User info 
+
+# Search books
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template("books.html", books=books)
+
+
+# User info
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -53,13 +66,15 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        existing_user = mongo.db.users.find_one({"username": request.form.get("username").lower()})
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
-            if check_password_hash(existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome {}".format(request.form.get("username")))
-                return redirect(url_for("profile", username = session["user"]))
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome {}".format(request.form.get("username")))
+                    return redirect(url_for("profile", username=session["user"]))
 
             else:
                 flash("Sorry, username and/or password is incorrect")
@@ -117,8 +132,9 @@ def edit_book(book_id):
             "book_image_url": request.form.get("book_image_url"),
             "created_by": session["user"]
         }
-        mongo.db.books.update({"_id": ObjectId(book_id)})
+        mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Book Updated!")
+        return redirect(url_for("books"))
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     categories = mongo.db.categories.find().sort("book_category", 1)
