@@ -6,4 +6,32 @@
 <a class="buttons" href="{{ url_for('add_book') }}">Add Book</a>
 
 
- {% endblock %}
+
+{% for book in books %}
+{% if session.user | lower == book.created_by | lower %}
+<div class="book-collection">
+    <div class="book-box">
+
+        <div class="image-and-text">
+            <span>
+                <img class="book-image" src="{{ book.book_image_url }}">
+            </span>
+            <span>
+                <p>Book: {{ book.book_name }}</p>
+                <p>Author: {{ book.book_author }}</p>
+                <p>Category: {{book.book_category }}</p>
+                <p>About the book: {{ book.book_description }}</p>
+                <p>Created by: {{ book.created_by }} </p>
+            </span>
+        </div>
+        <span>
+            <a class="buttons" href="{{ url_for('edit_book', book_id=book._id) }}">Edit Book</a>
+            <a class="buttons" href="{{ url_for('delete_book', book_id=book._id) }}">Delete Book</a>
+        </span>
+
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+
+{% endblock %}

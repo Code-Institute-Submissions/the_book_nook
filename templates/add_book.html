@@ -3,9 +3,9 @@
 <div class="add-book-form">
     <form method="POST" action="{{ url_for('add_book') }}">
         <label for="book_name">Name of Book</label>
-        <input type="text" name="book_name" id="book_name">
+        <input type="text" name="book_name" id="book_name" required>
         <label for="book_author">Name of Author</label>
-        <input type="text" name="book_author" id="book_author">
+        <input type="text" name="book_author" id="book_author" required>
         <label for="book_category">Choose Category</label>
         <select id="book_category" name="book_category" required>
             <option value="" disabled selected>Categories</option>
@@ -14,9 +14,9 @@
             {% endfor %}
         </select>
         <label for="book_description">Tell us more about the book</label>
-        <textarea type="text" name="book_description" id="book_description"></textarea>
+        <textarea type="text" name="book_description" id="book_description" required></textarea>
         <label for="book_image_url">Add link to image here (must be an online source)</label>
-        <input id="book_image_url" name="book_image_url" type="text">
+        <input id="book_image_url" name="book_image_url" type="text" required>
 
         <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
         <input class="buttons" type="submit" value="Submit">

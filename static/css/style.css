@@ -13,6 +13,7 @@ body {
 
 .main-section {
     margin-top: 10vh;
+    text-align: center;
 }
 
 /* --- Cancel & Submit Buttons */ 
@@ -107,32 +108,39 @@ nav {
     text-shadow: 2px 2px 5px;
 }
 
-.book-collection-container {
+.book-collection {
+    background-color: #445043;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 10vh;
 }
 
-.book-container {
+.book-box {
+    background-color: #7F917D;
     width: 30%;
-    display: flex;
-    background-color: #EFD3BF;
-    margin-top: 5vh;
-    text-align: center;
+    margin: 10px;
     border: 1px solid;
+    text-align: center;
 }
 
-.book-info {
-    display: block;
-    text-align: left;
-    margin-top: 5px;
+.image-and-text {
+    display: flex; 
+    align-items: center;
 }
-
 .book-image {
-    height: 30vh;
+    height: 40vh;
     margin: 5px;
 }
+
+.book-box p {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: left;
+}
+
+
+
+
 
 /* --- User Form to Add Book */
 
@@ -160,13 +168,13 @@ label, input, select, textarea {
 
 .main-categories {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: auto;
 }
 
 .category-box {
-    width: 50%;
-    height: 20vh;
+    width: 30%;
     background-color: aliceblue;
     text-align: center;
     margin: 10px;
@@ -181,4 +189,10 @@ label, input, select, textarea {
 
 #username , #password {
     width: 100%;
+}
+
+.user-book {
+    width: 30%;
+    margin: auto;
+    background-color: #7F917D;
 }
