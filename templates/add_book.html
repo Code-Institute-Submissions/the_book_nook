@@ -1,26 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="add-book-form">
-<form method="POST" action="{{ url_for('add_book') }}">
-    <label for="book_name">Name of Book</label>
-    <input type="text" name="book_name" id="book_name">
-     <label for="book_author">Name of Author</label>
-    <input type="text" name="book_author" id="book_author">
-    	<select id="book_category" name="book_category" required>
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.book_category }}">{{ category.book_category }}</option>
-                        {% endfor %}
-                    </select>
-    <label for="book_description">Tell us more about the book</label>
-    <textarea type="text" name="book_description" id="book_description"></textarea>
-    <label for="book_image_url">Add link to image here (must be an online source)</label>
-    <input id="book_image_url" name="book_image_url" type="text">
-      
+    <form method="POST" action="{{ url_for('add_book') }}">
+        <label for="book_name">Name of Book</label>
+        <input type="text" name="book_name" id="book_name">
+        <label for="book_author">Name of Author</label>
+        <input type="text" name="book_author" id="book_author">
+        <label for="book_category">Choose Category</label>
+        <select id="book_category" name="book_category" required>
+            <option value="" disabled selected>Categories</option>
+            {% for category in categories %}
+            <option value="{{ category.book_category }}">{{ category.book_category }}</option>
+            {% endfor %}
+        </select>
+        <label for="book_description">Tell us more about the book</label>
+        <textarea type="text" name="book_description" id="book_description"></textarea>
+        <label for="book_image_url">Add link to image here (must be an online source)</label>
+        <input id="book_image_url" name="book_image_url" type="text">
+
         <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
         <input class="buttons" type="submit" value="Submit">
-        
-</form>
+
+    </form>
 </div>
 
 {% endblock %}

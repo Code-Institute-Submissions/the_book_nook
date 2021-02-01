@@ -8,7 +8,7 @@
 
 body {
     font-family: "Bodoni Moda", serif;
-    background-color: #7F917D;
+    background-color: #C4CCC3;
 }
 
 .main-section {
@@ -83,8 +83,6 @@ nav {
     background-attachment: fixed;
 }
 
-/* ---- Books Collection & Search Site */
-
 /* --- Search form */ 
 
 .user-search-form {
@@ -98,29 +96,45 @@ nav {
     width: 100%;
 }
 
+/* ---- Books Collection */
 
 .headline-book-collection {
     text-align: center;
     margin: 5vh;
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 5px;
 }
 
 .book-collection-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     margin-top: 10vh;
 }
 
 .book-container {
     width: 30%;
-    margin: auto;
-    display: block;
+    display: flex;
+    background-color: #EFD3BF;
+    margin-top: 5vh;
     text-align: center;
+    border: 1px solid;
+}
+
+.book-info {
+    display: block;
+    text-align: left;
+    margin-top: 5px;
 }
 
 .book-image {
-    height: 20vh;
+    height: 30vh;
+    margin: 5px;
 }
 
-/* --- User Form to add book */
+/* --- User Form to Add Book */
 
 .add-book-form {
     height: 40vh;
@@ -131,15 +145,18 @@ nav {
 #book_category {
     width: 100%;
 }
-label, input, textarea {
+label, input, select, textarea {
     display: block;
     margin: 5px;
-
 }
 
-section {
-    text-align: center;
+#book_name, #book_author, #book_description, #book_image_url {
+    width: 100%;
 }
+
+/* ---- Categories */ 
+
+
 
 .main-categories {
     display: flex;
