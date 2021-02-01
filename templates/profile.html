@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="profile-page">
 <h2>{{ username }}s Profile Page</h2>
+</div>
 
-<a class="buttons" href="{{ url_for('add_book') }}">Add Book</a>
+<a class="buttons" href="{{ url_for('add_book') }}">Add A New Book</a>
 
 
 
+ <div class="book-collection">
 {% for book in books %}
+
 {% if session.user | lower == book.created_by | lower %}
-<div class="book-collection">
-    <div class="book-box">
+
+
+       <div class="book-box">
 
         <div class="image-and-text">
             <span>
@@ -30,8 +34,8 @@
         </span>
 
     </div>
-</div>
+
 {% endif %}
 {% endfor %}
-
+ </div>
 {% endblock %}

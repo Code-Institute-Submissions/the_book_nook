@@ -47,6 +47,7 @@ nav {
 .logo {
     letter-spacing: 3px;
     color: white;
+    text-decoration: none;
 }
 
 .burger-menu {
@@ -139,9 +140,6 @@ nav {
 }
 
 
-
-
-
 /* --- User Form to Add Book */
 
 .add-book-form {
@@ -195,4 +193,8 @@ label, input, select, textarea {
     width: 30%;
     margin: auto;
     background-color: #7F917D;
+}
+
+.profile-page {
+    margin: 10vh;
 }
