@@ -16,7 +16,10 @@
     <textarea type="text" name="book_description" id="book_description"></textarea>
     <label for="book_image_url">Add link to image here (must be an online source)</label>
     <input id="book_image_url" name="book_image_url" type="text">
-    <input type="submit" value="Submit">
+      
+        <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
+        <input class="buttons" type="submit" value="Submit">
+        
 </form>
 </div>
 

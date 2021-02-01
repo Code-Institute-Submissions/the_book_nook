@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<a href="{{ url_for('add_category') }}">Add New Category</a>
+
+ <section>
+<a class="buttons" href="{{ url_for('add_category') }}"><h1>Add New Category</h1></a>
+   <div class="main-categories">
 {% for category in categories %}
 <div class="category-box">
-    <span>{{ category.book_category }}</span>
-    <a href="{{ url_for('edit_category', category_id=category._id) }}">Edit Category</a>
-     <a href="{{ url_for('delete_category', category_id=category._id) }}">Delete Category</a>
-
+    <p><h2>{{ category.book_category }}</h2></p>
+    <p><a class="buttons" href="{{ url_for('edit_category', category_id=category._id) }}">Edit Category</a>
+     <a class="buttons" href="{{ url_for('delete_category', category_id=category._id) }}">Delete Category</a></p>
 </div>
 {% endfor %}
+</div>
+ </section>
 
 {% endblock %}

@@ -8,7 +8,26 @@
 
 body {
     font-family: "Bodoni Moda", serif;
-    background-color: beige;
+    background-color: #7F917D;
+}
+
+.main-section {
+    margin-top: 10vh;
+}
+
+/* --- Cancel & Submit Buttons */ 
+
+.buttons {
+  background-color: #445043;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Bodoni Moda", serif;
+  margin: 5px;
 }
 
 /* --- Header & Navigation list */
@@ -19,11 +38,18 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: lightcoral;
+    background-color: #445043;
+    position: fixed;
+    top: 0;
 }
 
 .logo {
     letter-spacing: 3px;
+    color: white;
+}
+
+.burger-menu {
+    display: none;
 }
 
 .navigation-list {
@@ -32,25 +58,55 @@ nav {
     display: flex;
     align-items: center;
     list-style-type: none;
-    background-color: white; 
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .navigation-list li a {
     text-decoration: none;
-    margin-right: 15px;
-    color: black;
+    margin-right: 18px;
+    color: white;
+}
+
+.logo:hover, .navigation-list li a:hover, .buttons:hover {
+    color:#7F917D;
+}
+
+
+
+.hero-image {
+    background-image: url('/static/css/images/hero-image.jpg');
+    height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* ---- Books Collection & Search Site */
 
+/* --- Search form */ 
+
+.user-search-form {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+#query {
+    width: 100%;
+}
+
+
 .headline-book-collection {
     text-align: center;
-    margin: 10vh;
+    margin: 5vh;
 }
 
 .book-collection-container {
     display: flex;
+    margin-top: 10vh;
 }
 
 .book-container {
@@ -68,12 +124,44 @@ nav {
 
 .add-book-form {
     height: 40vh;
-    width: 40%;
+    width: 30%;
     margin: auto;
     display: block;
 }
-
+#book_category {
+    width: 100%;
+}
 label, input, textarea {
     display: block;
     margin: 5px;
+
+}
+
+section {
+    text-align: center;
+}
+
+.main-categories {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.category-box {
+    width: 50%;
+    height: 20vh;
+    background-color: aliceblue;
+    text-align: center;
+    margin: 10px;
+}
+
+/* ---- Registration and Login Form */
+
+.registration-form {
+    width: 20%;
+    margin: auto;
+}
+
+#username , #password {
+    width: 100%;
 }

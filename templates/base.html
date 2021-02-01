@@ -13,7 +13,7 @@
             <div>
                 <h1 class="logo">The Book Nook</h1>
             </div>
-            <div>
+            <div class="burger-menu">
                 <i class="fas fa-bars"></i>
             </div>
             <div>
@@ -34,7 +34,8 @@
             </div>
         </nav>
     </header>
-    <section>
+    <section class="main-section">
+    <section class="flash">
         {% with messages=get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -45,8 +46,10 @@
         {% endif %}
         {% endwith %}
     </section>
+
     {% block content %}
     {% endblock %}
+    </section>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
