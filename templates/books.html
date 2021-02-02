@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="main-section">
-    <div class="hero-image"></div>
 
+ 
+<h1 class="headline-book-collection">Our Book Collection</h1>
     <div class="user-search-form">
         <form action="{{ url_for('search')}}" method="POST">
             <label for="query">Search our book collection</label>
@@ -15,7 +15,7 @@
         </form>
 
     </div>
-    <h1 class="headline-book-collection">Our Book Collection</h1>
+    
 
     <div class="book-collection">
         {% for book in books %}
@@ -41,5 +41,5 @@
         </div>
         {% endfor %}
     </div>
-</section>
+
 {% endblock %}

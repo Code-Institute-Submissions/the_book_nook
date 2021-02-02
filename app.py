@@ -19,14 +19,17 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/books")
 def books():
     books = mongo.db.books.find()
     return render_template("books.html", books=books)
 
 
 # Search books
-
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -35,8 +38,6 @@ def search():
 
 
 # User info
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
