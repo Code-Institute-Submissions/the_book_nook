@@ -30,6 +30,9 @@
                     <p>Category: {{book.book_category }}</p>
                     <p>About the book: {{ book.book_description }}</p>
                     <p>Created by: {{ book.created_by }} </p>
+                    {% if session.user %}
+                    <a href="#" class="like"><i class="fa fa-heart" aria-hidden="True"></i></a>
+                    {% endif %}
                 </span>
             </div>
             <span>

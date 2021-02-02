@@ -198,3 +198,12 @@ label, input, select, textarea {
 .profile-page {
     margin: 10vh;
 }
+
+
+.like {
+    color: gainsboro;
+}
+
+.heart i.fa-heart {
+    color: lightcoral;
+}
