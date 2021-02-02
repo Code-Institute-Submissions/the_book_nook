@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Font Awesome -->
     <script src="https://kit.fontawesome.com/21d46fbcca.js" crossorigin="anonymous"></script>
+    <!-- Link to my own css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>The Book Nook</title>
 </head>
@@ -51,6 +53,10 @@
     {% block content %}
     {% endblock %}
     </section>
+      <!-- Link to JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+    crossorigin="anonymous"></script>
+    <!--  Link to Javascript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
