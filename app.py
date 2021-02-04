@@ -144,6 +144,13 @@ def edit_book(book_id):
     return render_template("edit_book.html", book=book, categories=categories)
 
 
+@app.route("/like_book/<book_id>", methods=["GET", "POST"])
+def like_book(book_id):
+    mongo.db.books.update_one(
+        {"_id": ObjectId(book_id)}, {"$inc": {"likes": 1}})
+    return redirect(url_for("books"))
+
+
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})

@@ -31,7 +31,10 @@
                     <p>About the book: {{ book.book_description }}</p>
                     <p>Created by: {{ book.created_by }} </p>
                     {% if session.user %}
-                    <a href="#" class="like"><i class="fa fa-heart" aria-hidden="True"></i></a>
+                    <p>
+                    <a href="{{ url_for('like_book', book_id=book._id) }}" class="like"><i class="fa fa-heart" aria-hidden="True"></i></a>
+                    {{ book.likes }} likes
+                    </p>
                     {% endif %}
                 </span>
             </div>
