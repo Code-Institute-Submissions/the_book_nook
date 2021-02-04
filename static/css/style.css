@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap');
 
 * {
     padding: 0;
@@ -73,8 +73,6 @@ nav {
     color:#7F917D;
 }
 
-
-
 .hero-image {
     background-image: url('/static/css/images/hero-image.jpg');
     height: 70vh;
@@ -98,7 +96,7 @@ nav {
     width: 100%;
 }
 
-/* ---- Books Collection */
+/* ---- Books Collection site */
 
 .headline-book-collection {
     text-align: center;
@@ -127,20 +125,47 @@ nav {
 .image-and-text {
     display: flex; 
     align-items: center;
-}
-.book-image {
-    height: 40vh;
-    margin: 5px;
+    justify-content: center;
 }
 
-.book-box p {
-    font-weight: 700;
-    font-size: 18px;
+.book-image {
+    height: 35vh;
+    margin: 10px;
+}
+
+.text {
+    width: 50%;
+}
+
+
+.image-and-text {
     text-align: left;
 }
 
+.book-info-bold {
+    font-weight: 600;
+    font-size: 18px;
+}
 
-/* --- User Form to Add Book */
+.heart-like {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.like {
+    color: gainsboro;
+}
+
+.heart i.fa-heart {
+    color: lightcoral;
+}
+
+.book-box-description {
+    align-items: center;
+}
+
+
+/* --- Add Book User Form */
 
 .add-book-form {
     height: 40vh;
@@ -148,9 +173,11 @@ nav {
     margin: auto;
     display: block;
 }
+
 #book_category {
     width: 100%;
 }
+
 label, input, select, textarea {
     display: block;
     margin: 5px;
@@ -160,9 +187,7 @@ label, input, select, textarea {
     width: 100%;
 }
 
-/* ---- Categories */ 
-
-
+/* ---- Categories site */ 
 
 .main-categories {
     display: flex;
@@ -199,11 +224,3 @@ label, input, select, textarea {
     margin: 10vh;
 }
 
-
-.like {
-    color: gainsboro;
-}
-
-.heart i.fa-heart {
-    color: lightcoral;
-}
