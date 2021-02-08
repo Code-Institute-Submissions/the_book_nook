@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
    <div class="hero-image"></div>
-<h1>Index page</h1>
+<h1 class="headline-book-collection">Welcome to our Book Nook!</h1>
 
-  <div class="user-search-form">
+  <section class="user-search-form">
         <form action="{{ url_for('search')}}" method="POST">
             <label for="query">Search our book collection</label>
             <input type="text" name="query" id="query" minlength="3" required>
+            <label for="query">Type in name or author for the book you're looking for</label>
 
             <a class="buttons" href="{{ url_for('books') }}">Reset</a>
             <input class="buttons" type="submit" value="Search">
@@ -14,5 +15,15 @@
 
         </form>
 
-    </div>
+    </section>
+    <section>
+<div class="welcome-info-boxes">
+    <div><i class="fas fa-book-open"></i><p>Search our library for books</p></div>
+    <div><i class="fas fa-user-friends"></i><p>Log in to add your own books</p></div>
+    <div><i class="fas fa-user-plus"></i><p>Not a member yet? Join our community!</p></div>
+
+</div>
+
+    </section>
+
 {% endblock%}

@@ -75,7 +75,7 @@ nav {
 
 .hero-image {
     background-image: url('/static/css/images/hero-image.jpg');
-    height: 70vh;
+    height: 60vh;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -95,6 +95,30 @@ nav {
 #query {
     width: 100%;
 }
+
+/* ---- Index site */ 
+
+.welcome-info-boxes {
+    height: 30vh;
+    width: 100%;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.welcome-info-boxes div {
+    background-color: aliceblue;
+    height: 30vh;
+    width: 30%;
+}
+.welcome-info-boxes i {
+    font-size: 68px;
+    margin-top: 7.5vh;
+    margin-bottom: 5vh;
+}
+
 
 /* ---- Books Collection site */
 
