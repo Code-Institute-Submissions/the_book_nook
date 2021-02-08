@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section>
+
+<div class="single-book-box">
+    <div class="single-image-and-text">
+        <span>
+            <img class="single-book-image" src="{{ book.book_image_url }}">
+        </span>
+        <span class="single-text">
+            <p>Book:</p>
+            <p class="book-info-bold"> {{ book.book_name }}</p>
+            <p>Author:</p>
+            <p class="book-info-bold">{{ book.book_author }}</p>
+            <p>Category:</p>
+            <p class="book-info-bold"> {{book.book_category }}</p>
+
+            <p>Created by: {{ book.created_by }} </p>
+            {% if session.user %}
+            <p class="heart-like">
+                <a href="{{ url_for('like_book', book_id=book._id) }}" class="like"><i class="fa fa-heart"
+                        aria-hidden="True"></i></a>
+                {{ book.likes }} like this book
+            </p>
+            {% endif %}
+        </span>
+
+    </div>
+    <span>{{ book.book_description }}</span>
+</div>
+</section>
+
+{% endblock %}

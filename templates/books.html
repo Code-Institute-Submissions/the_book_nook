@@ -34,13 +34,13 @@
                     {% if session.user %}
                     <p class="heart-like">
                     <a href="{{ url_for('like_book', book_id=book._id) }}" class="like"><i class="fa fa-heart" aria-hidden="True"></i></a>
-                    {{ book.likes }}
+                    {{ book.likes }} like this book
                     </p>
                     {% endif %}
                 </span>
             </div>
             <div>
-                 <p class="book-box-description">About the book:</p><p class="book-info-bold"> {{ book.book_description }}</p>
+                 <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">View More...</a>
             </div>
             <span>
                 {% if session.user | lower == book.created_by | lower %}

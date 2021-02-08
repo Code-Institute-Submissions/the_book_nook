@@ -37,6 +37,13 @@ def search():
     return render_template("books.html", books=books)
 
 
+# Book Info
+@app.route("/book/<book_id>")
+def book(book_id):
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    return render_template("book.html", book=book)
+
+
 # User info
 @app.route("/register", methods=["GET", "POST"])
 def register():
