@@ -26,9 +26,9 @@
                     <img class="book-image" src="{{ book.book_image_url }}">
                 </span>
                 <span class="text">
-                    <p>Book:</p><p class="book-info-bold"> {{ book.book_name }}</p>
-                    <p>Author:</p><p class="book-info-bold">{{ book.book_author }}</p>
-                    <p>Category:</p><p class="book-info-bold"><a href="{{ url_for('show_category') }}" >{{ book.book_category }}</a></p>
+                    <p class="book-title"> {{ book.book_name }}</p>
+                    <p>By </p><p class="book-info-bold">{{ book.book_author }}</p>
+                    <p class="book-info-bold"><a href="{{ url_for('show_category') }}" >{{ book.book_category }}</a></p>
                    
                     <p>Added by: {{ book.created_by }} </p>
                     {% if session.user %}
@@ -36,6 +36,7 @@
                     <a href="{{ url_for('like_book', book_id=book._id) }}" class="like"><i class="fa fa-heart" aria-hidden="True"></i></a>
                     {{ book.likes }} like this book
                     </p>
+                
                     {% endif %}
                 </span>
             </div>

@@ -1,43 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="profile-page">
-<h2>{{ username }}s Profile Page</h2>
+<h2 class="headline-book-collection">Welcome {{ username }} to your Profile Page</h2>
+<p>Below you will find your added books to the collection</p>
 </div>
 
 <a class="buttons" href="{{ url_for('add_book') }}">Add A New Book</a>
 
 
+<div class="book-collection">
+    {% for book in books %}
 
- <div class="book-collection">
-{% for book in books %}
-
-{% if session.user | lower == book.created_by | lower %}
+    {% if session.user | lower == book.created_by | lower %}
 
 
-       <div class="book-box">
-
-        <div class="image-and-text">
-            <span>
-                <img class="book-image" src="{{ book.book_image_url }}">
-            </span>
-            <span>
-              
-                <p>Book: {{ book.book_name }}</p>
-                <p>Author: {{ book.book_author }}</p>
-                <p>Category: {{book.book_category }}</p>
-                <p>About the book: {{ book.book_description }}</p>
-                <p>Created by: {{ book.created_by }} </p>
+<div class="book-box">
+            <div class="image-and-text">
+                <span>
+                    <img class="book-image" src="{{ book.book_image_url }}">
+                </span>
+                <span class="text">
+                    <p class="book-title"> {{ book.book_name }}</p>
+                    <p>By</p>
+                    <p class="book-info-bold">{{ book.book_author }}</p>
+                    <p class="book-info-bold">
+                        <a href="{{ url_for('show_category') }}">{{ book.book_category }}</a>
+                    </p>
+                     <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">View More...</a>
+                </span>
+            </div>
+            <div>
                 
-
+            </div>
+            <span>
+                {% if session.user | lower == book.created_by | lower %}
+                <a class="buttons" href="{{ url_for('edit_book', book_id=book._id) }}">Edit Book</a>
+                <a class="buttons" href="{{ url_for('delete_book', book_id=book._id) }}">Delete Book</a>
             </span>
+            {% endif %}
         </div>
-        <span>
-            
-            <a class="buttons" href="{{ url_for('edit_book', book_id=book._id) }}">Edit Book</a>
-            <a class="buttons" href="{{ url_for('delete_book', book_id=book._id) }}">Delete Book</a>
-        </span>
-
-    </div>
 
 {% endif %}
 {% endfor %}

@@ -152,6 +152,10 @@ nav {
     align-items: center;
     justify-content: center;
 }
+.book-title {
+    font-size: 24px;
+    font-weight: 700;
+}
 
 .book-image {
     height: 35vh;
