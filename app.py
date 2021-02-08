@@ -37,11 +37,12 @@ def search():
     return render_template("books.html", books=books)
 
 
-# Book Info
+# Single Book Info
 @app.route("/book/<book_id>")
 def book(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("book.html", book=book)
+
 
 
 # User info
@@ -79,7 +80,7 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                existing_user["password"], request.form.get("password")): 
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome {}".format(request.form.get("username")))
                     return redirect(url_for("profile", username=session["user"]))
@@ -127,7 +128,7 @@ def add_book():
         flash("Book is now added to your collection!")
         return redirect(url_for("books"))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
+    categories = mongo.db.categories.find().sort("book_category", 1)
     return render_template("add_book.html", categories=categories)
 
 

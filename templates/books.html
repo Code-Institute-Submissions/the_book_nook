@@ -28,9 +28,9 @@
                 <span class="text">
                     <p>Book:</p><p class="book-info-bold"> {{ book.book_name }}</p>
                     <p>Author:</p><p class="book-info-bold">{{ book.book_author }}</p>
-                    <p>Category:</p><p class="book-info-bold"> {{book.book_category }}</p>
+                    <p>Category:</p><p class="book-info-bold"><a href="{{ url_for('show_category') }}" >{{book.book_category }}</a></p>
                    
-                    <p>Created by: {{ book.created_by }} </p>
+                    <p>Added by: {{ book.created_by }} </p>
                     {% if session.user %}
                     <p class="heart-like">
                     <a href="{{ url_for('like_book', book_id=book._id) }}" class="like"><i class="fa fa-heart" aria-hidden="True"></i></a>
