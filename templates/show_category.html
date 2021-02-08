@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-hello
+{% for book in books %}
+{{ book.book_name }}
+{% endfor %}
 
 {% endblock %}

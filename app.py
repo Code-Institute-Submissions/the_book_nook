@@ -44,6 +44,12 @@ def book(book_id):
     return render_template("book.html", book=book)
 
 
+# collect category
+@app.route("/show_category")
+def show_category():
+    books = mongo.db.books.find()
+    return render_template("show_category.html", books=books)
+
 
 # User info
 @app.route("/register", methods=["GET", "POST"])
