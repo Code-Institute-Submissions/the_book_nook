@@ -13,28 +13,29 @@
     <header>
         <nav>
             <div>
-                <a class="logo" href="{{ url_for('index') }}"><h1>The Book Nook</h1></a>
+                <a class="logo" href="{{ url_for('index') }}">
+                    <h1>The Book Nook</h1>
+                </a>
             </div>
             <div class="burger-menu">
                 <i class="fas fa-bars"></i>
             </div>
-            <div>
-                <ul class="navigation-list">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('books') }}">Our Book Collection</a></li>
-                    {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Manage My Books</a></li>
-                    
-                    {% if session.user | lower == "admin" | lower %}
-                    <li><a href="{{ url_for('categories') }}">Manage Categories</a></li>
-                    {% endif %}
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    {% endif %}
-                </ul>
-            </div>
+            <ul class="navigation-list">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('books') }}">Our Book Collection</a></li>
+                {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Manage My Books</a></li>
+        
+                {% if session.user | lower == "admin" | lower %}
+                <li><a href="{{ url_for('categories') }}">Manage Categories</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                {% endif %}
+            </ul>
+        
         </nav>
     </header>
     <section class="main-section">

@@ -8,7 +8,8 @@
 
 body {
     font-family: "Bodoni Moda", serif;
-    background-color: #C4CCC3;
+    background-color: #ECEEEA;
+    font-size: 1rem;
 }
 
 .main-section {
@@ -26,9 +27,9 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   font-family: "Bodoni Moda", serif;
   margin: 5px;
+  border-radius: 4px;
 }
 
 /* --- Header & Navigation list */
@@ -38,7 +39,7 @@ nav {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #445043;
     position: fixed;
     top: 0;
@@ -55,9 +56,10 @@ nav {
 }
 
 .navigation-list {
-    width: 100%;
+    width: 70%;
     height: 10vh;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     list-style-type: none;
     letter-spacing: 1px;
@@ -65,7 +67,7 @@ nav {
 
 .navigation-list li a {
     text-decoration: none;
-    margin-right: 18px;
+    margin-right: 1rem;
     color: #EFF1EE;
 }
 
@@ -105,7 +107,6 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
 }
 
 .welcome-info-boxes div {
@@ -114,7 +115,7 @@ nav {
     width: 30%;
 }
 .welcome-info-boxes i {
-    font-size: 68px;
+    font-size: 4.5rem;
     margin-top: 7.5vh;
     margin-bottom: 5vh;
 }
@@ -125,7 +126,7 @@ nav {
 .headline-book-collection {
     text-align: center;
     margin-top: 15vh;
-    font-size: 48px;
+    font-size: 4vw;
     text-transform: uppercase;
     letter-spacing: 5px;
     text-shadow: 2px 2px 5px;
@@ -308,13 +309,63 @@ footer ul {
 }
 
 footer ul li {
-    margin-right: 10vh;
+    margin-right: 15px;
     list-style-type: none;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 footer ul li a {
     color: #EFF1EE;
 }
 
+/* ---- Media Queries */ 
+
+@media screen and (max-width:767px) {
+
+body {
+    font-size: 12px;
+}
+.logo {
+    font-size: 12px;
+}
+
+.buttons {
+    font-size-adjust: 12px;
+}
+
+.burger-menu {
+    display: block;  
+    margin-right: 1rem;
+    color: #EFF1EE;
+}
+
+.navigation-list {
+    position: fixed;
+    background-color: #445043;
+    top: 10vh;
+    width: 100%;
+    height: 40vh;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    display: none;
+}
+
+.navigation-list li {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    background-color: #445043;
+}
+
+footer {
+    font-size: 12px;
+}
+
+footer ul li a {
+    font-size: 1rem;
+
+}
+}
