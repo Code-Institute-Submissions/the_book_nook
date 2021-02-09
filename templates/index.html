@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
    <div class="hero-image"></div>
-<h1 class="headline-book-collection">Welcome to the Book Nook!</h1>
+<h1 class="headline-main">Welcome to the Book Nook!</h1>
 
   <section class="user-search-form">
         <form action="{{ url_for('search')}}" method="POST">
@@ -16,9 +16,25 @@
     </section>
     <section>
 <div class="welcome-info-boxes">
-    <div><a href="{{ url_for('books') }}"><i class="fas fa-book-open"></i></a><p>Check out our library to find your new favorite</p></div>
-    <div><a href="{{ url_for('login') }}"><i class="fas fa-user-friends"></i></a><p>Log in to add your own books to our library and start your own collection!</p></div>
-    <div><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i></a><p>Not a member yet? Join our community!</p></div>
+    <div>
+        <a href="{{ url_for('books') }}">
+            <i class="fas fa-book-open"></i>
+        </a><p class="headline-mini">Find a book</p>
+        <p>Are you looking for a particular book? Check out our library to find it or find a new favorite!</p>
+    </div>
+    <div>
+        <a href="{{ url_for('login') }}">
+            <i class="fas fa-user-friends"></i>
+        </a>
+        <p class="headline-mini">Add a book</p>
+        <p>Log in to add your own books to our library and start your own collection!</p>
+    </div>
+    <div>
+        <a href="{{ url_for('register') }}">
+            <i class="fas fa-user-plus"></i>
+        </a><p class="headline-mini">Join our community</p>
+        <p>As a member you can create your own library of books as well as finding books from other member!</p>
+    </div>
 
 </div>
 

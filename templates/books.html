@@ -1,56 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
- 
-<h1 class="headline-book-collection">Our Book Collection</h1>
-    <section class="user-search-form">
-        <form action="{{ url_for('search')}}" method="POST">
-            <label for="query">Search our book collection</label>
-            <input type="text" name="query" id="query" minlength="3" required>
-             <label for="query">Type in name or author for the book you're looking for</label>
+<h1 class="headline-main">Our Book Collection</h1>
+<section class="user-search-form">
+    <form action="{{ url_for('search')}}" method="POST">
+        <label for="query">Search our book collection</label>
+        <input type="text" name="query" id="query" minlength="3" required>
+        <label for="query">Type in name or author for the book you're looking for</label>
+        <input class="buttons" type="submit" value="Search">
+    </form>
+</section>
+<section class="book-collection">
+    {% for book in books %}
+    <div class="book-box">
+        <img class="book-image" src="{{ book.book_image_url }}">
+        <p class="book-title"> {{ book.book_name }}</p>
+        <p>By</p>
+        <p>{{ book.book_author }}</p>
+        <p><a href="{{ url_for('show_category') }}">{{ book.book_category }}</a></p>
+        {% if session.user %}
+        <p class="heart-image">
+            <a href="{{ url_for('like_book', book_id=book._id) }}" class="like">
+                <i class="fa fa-heart" aria-hidden="True"></i>
+            </a>
+            {{ book.likes }} like this book
+        </p>
+        {% endif %}
+  
+    <span>
+        <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">View More...</a>
+    </span>
+    <span>
+        {% if session.user | lower == book.created_by | lower %}
+        <a class="book-buttons" href="{{ url_for('edit_book', book_id=book._id) }}">Edit Book</a>
+        <a class="book-buttons" href="{{ url_for('delete_book', book_id=book._id) }}">Delete Book</a>
+    </span>
+    {% endif %}
+    </div>
+    {% endfor %}
 
-            <a class="buttons" href="{{ url_for('books') }}">Reset</a>
-            <input class="buttons" type="submit" value="Search">
-
-
-        </form>
-
-    </section>
-    
-
-    <section class="book-collection">
-        {% for book in books %}
-        <div class="book-box">
-            <div class="image-and-text">
-                <span>
-                    <img class="book-image" src="{{ book.book_image_url }}">
-                </span>
-                <span class="text">
-                    <p class="book-title"> {{ book.book_name }}</p>
-                    <p>By </p><p class="book-info-bold">{{ book.book_author }}</p>
-                    <p class="book-info-bold"><a href="{{ url_for('show_category') }}">{{ book.book_category }}</a></p>
-                   
-                    <p>Added by: {{ book.created_by }} </p>
-                    {% if session.user %}
-                    <p class="heart-like">
-                    <a href="{{ url_for('like_book', book_id=book._id) }}" class="like"><i class="fa fa-heart" aria-hidden="True"></i></a>
-                    {{ book.likes }} like this book
-                    </p>
-                
-                    {% endif %}
-                </span>
-            </div>
-            <div>
-                 <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">View More...</a>
-            </div>
-            <span>
-                {% if session.user | lower == book.created_by | lower %}
-                <a class="buttons" href="{{ url_for('edit_book', book_id=book._id) }}">Edit Book</a>
-                <a class="buttons" href="{{ url_for('delete_book', book_id=book._id) }}">Delete Book</a>
-            </span>
-            {% endif %}
-        </div>
-        {% endfor %}
-    </section>
+</section>
 
 {% endblock %}

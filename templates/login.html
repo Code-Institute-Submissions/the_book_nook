@@ -1,16 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="main-section">
-<div class="registration-form">
-    <h2>Log In</h2>
-<form method="POST" action="{{ url_for('login') }}">
-    <label for="username">Your Username</label>
-    <input type="text" name="username" id="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" >
-    <label for="password">Your Password</label>
-    <input type="password" name="password" id="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" >
-    <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
-    <input class="buttons" type="submit" value="Submit">
-</form>
-</div>
+<section>
+    <div>
+    <h1 class="headline-main">Log In</h1>
+    <p>Welcome back! Log in below to get directed to your profile page</p>
+    </div>
+    <div class="registration-form">
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <label class="headline-mini" for="username">Username:</label>
+            <input type="text" name="username" id="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$">
+
+            <label class="headline-mini" for="password">Password:</label>
+            <input type="password" name="password" id="password" minlength="5" maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$">
+            <input class="buttons" type="submit" value="Log In">
+            <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
+
+        </form>
+    </div>
 </section>
 {% endblock %}

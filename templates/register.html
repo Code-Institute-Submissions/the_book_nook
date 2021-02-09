@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="main-section">
-<div class="registration-form">
-    <h2>Register</h2>
-<form method="POST" action="{{ url_for('register') }}">
-    <label for="username">Choose Username</label>
-    <input type="text" name="username" id="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" >
-    <label for="password">Choose Password</label>
-    <input type="password" name="password" id="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" >
-    <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
-    <input class="buttons" type="submit" value="Submit">
-</form>
-</div>
+<section>
+    <div>
+        <h1 class="headline-main">Become a member</h1>
+    </div>
+
+    <div class="registration-form">
+        <form method="POST" action="{{ url_for('register') }}">
+            <label class="headline-mini" for="username"> Choose a username:</label>
+            <input type="text" name="username" id="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$">
+            <label class="text-below-form" for="username">Your chosen username must have a minimum length of 5,
+                consisting of letters and/or numbers</label>
+            <label class="headline-mini" for="password">Choose a password:</label>
+            <input type="password" name="password" id="password" minlength="5" maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$">
+            <label class="text-below-form" for="password">Your chosen password must have a minimum length of 5,
+                consisting of letters and/or numbers</label>
+            <input class="buttons" type="submit" value="Register">
+           <a class="reset-buttons" href="{{ url_for('books') }}">Cancel</a>
+
+        </form>
+    </div>
 </section>
 
 {% endblock %}
