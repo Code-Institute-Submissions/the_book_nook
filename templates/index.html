@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
    <div class="hero-image"></div>
-<h1 class="headline-book-collection">Welcome to our Book Nook!</h1>
+<h1 class="headline-book-collection">Welcome to the Book Nook!</h1>
 
   <section class="user-search-form">
         <form action="{{ url_for('search')}}" method="POST">
             <label for="query">Search our book collection</label>
             <input type="text" name="query" id="query" minlength="3" required>
             <label for="query">Type in name or author for the book you're looking for</label>
-
-            <a class="buttons" href="{{ url_for('books') }}">Reset</a>
             <input class="buttons" type="submit" value="Search">
 
 
@@ -18,9 +16,9 @@
     </section>
     <section>
 <div class="welcome-info-boxes">
-    <div><i class="fas fa-book-open"></i><p>Search our library for books</p></div>
-    <div><i class="fas fa-user-friends"></i><p>Log in to add your own books</p></div>
-    <div><i class="fas fa-user-plus"></i><p>Not a member yet? Join our community!</p></div>
+    <div><a href="{{ url_for('books') }}"><i class="fas fa-book-open"></i></a><p>Check out our library to find your new favorite</p></div>
+    <div><a href="{{ url_for('login') }}"><i class="fas fa-user-friends"></i></a><p>Log in to add your own books to our library and start your own collection!</p></div>
+    <div><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i></a><p>Not a member yet? Join our community!</p></div>
 
 </div>
 
