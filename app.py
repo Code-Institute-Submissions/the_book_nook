@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    books = mongo.db.books.find().sort("likes", -1).limit(3)
+    return render_template("index.html", books=books)
 
 
 @app.route("/books")

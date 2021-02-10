@@ -39,5 +39,37 @@
 </div>
 
     </section>
+    <section>
+
+        <div>
+            <h1 class="headline-medium">Top 3 liked books by our members</h1>
+        </div>
+        <section class="book-collection">
+    {% for book in books %}
+    <div class="book-box">
+         {% if session.user %}
+        <p class="heart-image">
+            <a href="{{ url_for('like_book', book_id=book._id) }}" class="like">
+                <i class="fa fa-heart" aria-hidden="True"></i>
+            </a>
+            {{ book.likes }}
+        </p>
+        {% endif %}
+        <img class="book-image" src="{{ book.book_image_url }}">
+        <p class="book-title"> {{ book.book_name }}</p>
+        <p>By</p>
+        <p>{{ book.book_author }}</p>
+        <p><a href="{{ url_for('show_category') }}">{{ book.book_category }}</a></p>
+       
+  
+    <span>
+        <a class="buttons" href="{{ url_for('book', book_id=book._id) }}"><i class="fas fa-arrow-right"></i> View More...</a>
+    </span>
+   
+
+    </div>
+    {% endfor %}
+
+    </section>
 
 {% endblock%}
