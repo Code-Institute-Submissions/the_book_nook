@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="add-book-form">
+<div>
+    <h1 class="headline-medium">Add a new book</h1>
+    <p>Fill in the form below and press submit to add a new book. Once added you can find the book under 'My Books'</p>
+</div>
+<div class="add-edit-book-form">
     <form method="POST" action="{{ url_for('add_book') }}">
         <label for="book_name">Name of Book</label>
         <input type="text" name="book_name" id="book_name" required>
@@ -15,13 +19,15 @@
         </select>
         <label for="book_description">Tell us more about the book</label>
         <textarea type="text" name="book_description" id="book_description" maxlength="500" required></textarea>
-        <label for="book_image_url">Add link to image here (must be an online source)</label>
+        <label for="book_image_url">Add link to image here</label>
         <input id="book_image_url" name="book_image_url" type="text" required>
-
-        <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
+        <p class="text-below-form">Link to image must be an online source, ending with .jpg or .gif</p>
         <input class="buttons" type="submit" value="Submit">
+        <a class="reset-buttons" href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
+        
 
     </form>
+ 
 </div>
 
 {% endblock %}

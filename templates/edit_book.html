@@ -1,31 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
+<div>
+    <h1 class="headline-medium">Edit Your Book</h1>
+</div>
+<div class="add-edit-book-form">
+    <form method="POST" action="{{ url_for('edit_book', book_id=book._id) }}">
+        <label for="book_name">Name of Book</label>
+        <input value="{{ book.book_name }}" type="text" name="book_name" id="book_name">
+        <label for="book_author">Name of Author</label>
+        <input value="{{ book.book_author }}" type="text" name="book_author" id="book_author">
+        <label for="book_category">Choose Category</label>
+        <select id="book_category" name="book_category" requested>
+            <option value="" disabled>Category</option>
+            {% for category in categories %}
+            {% if category.book_category == book.book_category %}
+            <option value="{{ category.book_category }}" selected>{{ category.book_category }}</option>
+            {% else %}
+            <option value="{{ category.book_category }}">{{ category.book_category }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        <label for="book_description">Tell us more about the book</label>
+        <textarea type="text" name="book_description" id="book_description">{{ book.book_description }}</textarea>
+        <label for="book_image_url">Add link to image here (must be an online source)</label>
+        <input value="{{ book.book_image_url }}" id="book_image_url" name="book_image_url" type="text">
+         <p class="text-below-form">Link to image must be an online source, ending with .jpg or .gif</p>
 
-<div class="add-book-form">
-<form method="POST" action="{{ url_for('edit_book', book_id=book._id) }}">
-    <label for="book_name">Name of Book</label>
-    <input value="{{ book.book_name }}" type="text" name="book_name" id="book_name">
-     <label for="book_author">Name of Author</label>
-    <input value="{{ book.book_author }}" type="text" name="book_author" id="book_author">
-    <select id="book_category" name="book_category" requested>
-    <option value="" disabled>Category</option>
-    {% for category in categories %}
-    {% if category.book_category == book.book_category %}
-    <option value="{{ category.book_category }}" selected>{{ category.book_category }}</option>
-    {% else %}
-     <option value="{{ category.book_category }}" >{{ category.book_category }}</option>
-     {% endif %}
-    {% endfor %}
-    </select>
-    <label for="book_description">Tell us more about the book</label>
-    <textarea type="text" name="book_description" id="book_description">{{ book.book_description }}</textarea>
-    <label for="book_image_url">Add link to image here (must be an online source)</label>
-    <input value="{{ book.book_image_url }}" id="book_image_url" name="book_image_url" type="text">
-     
-        <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
+       
         <input class="buttons" type="submit" value="Submit">
-      
-</form>
+         <a class="reset-buttons" href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
+
+    </form>
 </div>
 
 {% endblock %}
