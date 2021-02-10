@@ -132,7 +132,7 @@ def add_book():
         }
         mongo.db.books.insert_one(book)
         flash("Book is now added to your collection!")
-        return redirect(url_for("profile"))
+        return redirect(url_for("profile", username=session['user']))
 
     categories = mongo.db.categories.find().sort("book_category", 1)
     return render_template("add_book.html", categories=categories)
@@ -151,7 +151,7 @@ def edit_book(book_id):
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Book Updated!")
-        return redirect(url_for("profile"))
+        return redirect(url_for("profile", username=session['user']))
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     categories = mongo.db.categories.find().sort("book_category", 1)
@@ -169,7 +169,7 @@ def like_book(book_id):
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Book is now deleted")
-    return redirect(url_for("profile"))
+    return redirect(url_for("profile", username=session['user']))
 
 
 # Manage Categories

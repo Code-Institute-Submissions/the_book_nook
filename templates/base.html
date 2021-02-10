@@ -24,7 +24,7 @@
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('books') }}">Our Book Collection</a></li>
                 {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Manage My Books</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">My Books</a></li>
         
                 {% if session.user | lower == "admin" | lower %}
                 <li><a href="{{ url_for('categories') }}">Manage Categories</a></li>

@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="add-book-form">
+<div>
+    <h1 class="headline-main">Edit a Category</h1>
+</div>
+<div class="add-edit-book-form">
 <form method="POST" action="{{ url_for('edit_category', category_id=category._id) }}">
     <label for="book_category">Edit Category</label>
     <input value="{{ category.book_category }}" type="text" name="book_category" id="book_category" minlength="3" maxlength="20" required>
     
-        <a class="buttons" href="{{ url_for('books') }}">Cancel</a>
+       
         <input class="buttons" type="submit" value="Submit">
+         <a class="reset-buttons" href="{{ url_for('categories') }}">Cancel</a>
        
 </form>
 </div>

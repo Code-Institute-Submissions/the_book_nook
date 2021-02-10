@@ -17,6 +17,10 @@ html, body {
     text-align: center;
 }
 
+.flash {
+    margin-top: 10vh;
+}
+
 
 
 /* ---------------------------------------- Cancel & Submit Buttons */ 
@@ -42,7 +46,7 @@ html, body {
   display: inline-block;
   border-radius: 4px;
   font-size: 16px;
-  margin: 3px;
+  margin: 7.5px;
   box-shadow: 2px 2px 6px #000;
 }
 
@@ -286,20 +290,27 @@ label {
     width: 100%;
 }
 
-/* ---- Categories site */ 
+/* ---.................................- Categories site */ 
 
 .main-categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: auto;
+    margin-top: 5vh;
 }
 
 .category-box {
     width: 30%;
-    background-color: aliceblue;
+    background-color:  #fff;
     text-align: center;
-    margin: 10px;
+    margin: 15px;
+}
+
+.button-box {
+    display: flex;
+    justify-content: space-evenly;
+   
 }
 
 /* -------------------------------------- Registration and Login Form */
@@ -373,8 +384,23 @@ body {
 }
 
 .buttons {
+    padding: 5px 20px;
     font-size: 12px;
+    margin: 5px;
 }
+
+.reset-buttons {
+  padding: 5px 20px;
+  font-size: 12px;
+  margin: 5px;
+}
+
+.book-buttons {
+  padding: 5px 20px;
+  font-size: 12px;
+  margin: 5px;
+}
+
 
 .burger-menu {
     display: block;  
@@ -413,6 +439,17 @@ body {
 .book-collection {
     display: block;
 }
+
+.main-categories {
+    display: block;
+}
+
+.category-box {
+    width: 80%;
+    margin: auto;
+    margin-top: 5vh;
+}
+
 
 .book-box {
     width: 70%;
