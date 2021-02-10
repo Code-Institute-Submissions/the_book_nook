@@ -26,7 +26,7 @@ def index():
 
 @app.route("/books")
 def books():
-    books = mongo.db.books.find()
+    books = mongo.db.books.find().sort("book_name", 1)
     return render_template("books.html", books=books)
 
 
