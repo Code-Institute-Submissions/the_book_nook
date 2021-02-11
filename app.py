@@ -18,12 +18,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+#Index page
 @app.route("/")
 def index():
     books = mongo.db.books.find().sort("likes", -1).limit(3)
     return render_template("index.html", books=books)
 
 
+#Book Collection
 @app.route("/books")
 def books():
     books = mongo.db.books.find().sort("book_name", 1)
@@ -45,14 +47,14 @@ def book(book_id):
     return render_template("book.html", book=book)
 
 
-# collect category
+#Collect and Show Category
 @app.route("/show_category")
 def show_category():
     books = mongo.db.books.find()
     return render_template("show_category.html", books=books)
 
 
-# User info
+# Register User
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -65,12 +67,20 @@ def register():
             flash("Sorry, this username is taken, try another!")
             return redirect(url_for("register"))
 
-        register = {
-            # if username not taken, sends form to database to store new user
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+
+        if password != confirm_password:
+            flash("Please ensure that your passwords match.")
+            return redirect(url_for("register"))
+
+        if password == confirm_password:
+            register = {
+                # if username not taken, sends form to database to store new user
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(request.form.get("password"))
+            }
+            mongo.db.users.insert_one(register)
 
         session["user"] = request.form.get("username").lower()
         flash("You have been succesfully registered!")
@@ -79,6 +89,7 @@ def register():
     return render_template("register.html")
 
 
+#User LogIn
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -103,15 +114,17 @@ def login():
     return render_template("login.html")
 
 
+#Profile-page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     books = mongo.db.books.find()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+   
     return render_template("profile.html", username=username, books=books)
 
 
+#User LogOut
 @app.route("/logout")
 def logout():
     flash("You have now been logged out! See you next time!")
@@ -119,7 +132,7 @@ def logout():
     return redirect(url_for("books"))
 
 
-# Manage Books
+#Add New Book
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     if request.method == "POST":
@@ -139,6 +152,7 @@ def add_book():
     return render_template("add_book.html", categories=categories)
 
 
+#Edit Book
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
@@ -159,13 +173,14 @@ def edit_book(book_id):
     return render_template("edit_book.html", book=book, categories=categories)
 
 
+#Like Book
 @app.route("/like_book/<book_id>", methods=["GET", "POST"])
 def like_book(book_id):
-    mongo.db.books.update_one(
-        {"_id": ObjectId(book_id)}, {"$inc": {"likes": 1}})
+    mongo.db.books.update({"_id": ObjectId(book_id)}, {"$inc": {"likes": 1}})
     return redirect(url_for("books"))
 
 
+#Delete Book
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
@@ -180,6 +195,7 @@ def categories():
     return render_template("categories.html", categories=categories)
 
 
+#Add Category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -193,6 +209,7 @@ def add_category():
     return render_template("add_category.html")
 
 
+#Edit Category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -207,6 +224,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+#Delete Category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})

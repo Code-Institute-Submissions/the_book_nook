@@ -15,9 +15,9 @@
     {% for book in books %}
     <div class="book-box">
          {% if session.user %}
-        <p class="heart-image">
-            <a href="{{ url_for('like_book', book_id=book._id) }}" class="like">
-                <i class="fa fa-heart" aria-hidden="True"></i>
+        <p>
+            <a  href="{{ url_for('like_book', book_id=book._id) }}" >
+                <i class="fa fa-heart"></i>
             </a>
             {{ book.likes }}
         </p>
