@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-<a class="buttons" href="{{ url_for('books') }}"><i class="fas fa-arrow-left"></i> Go back to book collection</a>
+<a class="buttons" href="{{ url_for('books') }}"><i class="fas fa-arrow-left"></i> Back to book collection</a>
     <div class="single-book-box">
         <div class="single-image-and-text">
             <span>
@@ -10,6 +10,7 @@
             <span class="single-text">
                 <p class="single-book-title">{{ book.book_name }}</p>
                 <p>by {{ book.book_author }}</p>
+                <p class="single-book-category">{{ book.book_category }}</p>
                 
                 <p class="single-book-description">{{ book.book_description }}</p>
                 <span>
@@ -26,8 +27,23 @@
         <p class="single-created-by">
             Added by: {{ book.created_by }}
         </p>
-        {% endif %}
+    
     </div>
+      {% endif %}
+    <div class="comment-box">
+        <h1>Comments by users: </h1>
+        <p>{{ book.book_comment }}</p>
+    </div>
+<div class="add-edit-book-form">
+    <form method="POST" action="{{ url_for('add_comment', book_id=book._id) }}">
+        <label for="book_comment">Give us your thoughts about the book!</label>
+      
+        <textarea type="text" name="book_comment" id="book_comment" maxlength="500" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
+      
+</div>
+
 </section>
 
 {% endblock %}

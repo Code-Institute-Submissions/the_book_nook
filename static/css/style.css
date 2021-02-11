@@ -65,6 +65,11 @@ html, body {
     color: #ECEEEA;
 }
 
+.button-box {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* ----------------------------------------- Header & Navigation list */
 
 nav {
@@ -247,20 +252,29 @@ a {
     margin-top: 5vh;
 }
 
-.single-book-description {
-    margin: 10vh 0 10vh 0;
-}
-
-.single-heart-like {
-    text-align: left;
-    margin-top: 10px;
+.single-book-category {
     font-size: 20px;
 }
+
+.single-book-description {
+    margin: 10vh 0 10vh 0;
+    font-size: 16px;
+}
+
 
 .single-created-by {
     text-align: right;
     margin-top: 10px;
     font-size: 20px;
+}
+
+.comment-box {
+    width: 70%;
+    margin: auto;
+    background-color: lightpink;
+    border: 1px solid #000;
+    margin-top: 5vh;
+
 }
 
 /* ---------------------------------------- Add Book User Form */
@@ -307,11 +321,6 @@ label {
     margin: 15px;
 }
 
-.button-box {
-    display: flex;
-    justify-content: space-evenly;
-   
-}
 
 /* -------------------------------------- Registration and Login Form */
 
