@@ -1,48 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="profile-page">
-<h2 class="headline-book-collection">Welcome {{ username }} to your Profile Page</h2>
-<p>Below you will find your added books to the collection</p>
+<div class="top-page-headline-section">
+    <h2 class="headline-book-collection">Welcome {{ username }} to your Profile Page</h2>
+    <p>Below you will find your added books to the collection</p>
 </div>
 <a class="buttons" href="{{ url_for('books') }}"><i class="fas fa-arrow-left"></i> Go to book collection</a>
 <a class="buttons" href="{{ url_for('add_book') }}"><i class="fas fa-plus"></i> Add A New Book</a>
 <h1 class="headline-medium">Your Added Books</h1>
-
-
-
 <div class="book-collection">
     {% for book in books %}
-
     {% if session.user | lower == book.created_by | lower %}
-
-
-<div class="book-box">
-            <div class="image-and-text">
-                <span>
-                    <img class="book-image" src="{{ book.book_image_url }}">
-                </span>
-                <span class="text">
-                    <p class="book-title"> {{ book.book_name }}</p>
-                    <p>By</p>
-                    <p class="book-info-bold">{{ book.book_author }}</p>
-                    <p class="book-info-bold">
-                        <a href="{{ url_for('show_category', book_category=book.book_category) }}">{{ book.book_category }}</a>
-                    </p>
-                     <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">Read More <i class="fas fa-arrow-right"></i></a>
-                </span>
-            </div>
-            <div>
-                
-            </div>
+    <div class="book-box">
+        <div class="image-and-text">
             <span>
-                {% if session.user | lower == book.created_by | lower %}
-                <a class="book-buttons" href="{{ url_for('edit_book', book_id=book._id) }}"><i class="fas fa-pencil-alt"></i> Edit Book</a>
-                <a class="book-buttons" href="{{ url_for('delete_book', book_id=book._id) }}"><i class="fas fa-trash-alt"></i> Delete Book</a>
+                <img class="book-image" src="{{ book.book_image_url }}">
             </span>
-            {% endif %}
+            <span class="text">
+                <p class="book-title"> {{ book.book_name }}</p>
+                <p>By</p>
+                <p class="book-info-bold">{{ book.book_author }}</p>
+                <p class="book-info-bold">
+                    <a
+                        href="{{ url_for('show_category', book_category=book.book_category) }}">{{ book.book_category }}</a>
+                </p>
+                <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">Read More <i
+                        class="fas fa-arrow-right"></i></a>
+            </span>
         </div>
-
-{% endif %}
-{% endfor %}
- </div>
+        <div>
+        </div>
+        <span>
+            {% if session.user | lower == book.created_by | lower %}
+            <a class="book-buttons" href="{{ url_for('edit_book', book_id=book._id) }}"><i
+                    class="fas fa-pencil-alt"></i> Edit Book</a>
+            <a class="book-buttons" href="{{ url_for('delete_book', book_id=book._id) }}"><i
+                    class="fas fa-trash-alt"></i> Delete Book</a>
+        </span>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
 {% endblock %}

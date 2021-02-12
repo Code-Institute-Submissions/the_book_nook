@@ -182,7 +182,8 @@ def edit_book(book_id):
 @app.route("/like_book/<book_id>", methods=["GET", "POST"])
 def like_book(book_id):
     mongo.db.books.update({"_id": ObjectId(book_id)}, {"$inc": {"likes": 1}})
-    return redirect(url_for("books"))
+    book = book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    return render_template("book.html", book=book)
 
 
 # Add Comment to Book

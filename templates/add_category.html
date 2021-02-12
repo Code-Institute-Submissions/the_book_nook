@@ -4,14 +4,15 @@
     <h1 class="headline-main">Add a new category</h1>
 </div>
 <div class="add-edit-book-form">
-<form method="POST" action="{{ url_for('add_category') }}">
-    <label for="book_category"><h1>New Category</h1></label>
-    <input type="text" name="book_category" id="book_category" minlength="3" maxlength="20" required>
-       
+    <form method="POST" action="{{ url_for('add_category') }}">
+        <label for="book_category">
+            <h1>New Category</h1>
+        </label>
+        <input type="text" name="book_category" id="book_category" minlength="3" maxlength="20" required>
         <p class="button-box">
-        <input class="buttons" type="submit" value="Submit">
-        <a class="reset-buttons" href="{{ url_for('categories') }}">Cancel</a>
+            <input class="buttons" type="submit" value="Submit">
+            <a class="reset-buttons" href="{{ url_for('categories') }}">Cancel</a>
         </p>
-</form>
+    </form>
 </div>
 {% endblock %}

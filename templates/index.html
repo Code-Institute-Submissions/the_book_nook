@@ -1,67 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-   <div class="hero-image"></div>
+<div class="hero-image"></div>
 <h1 class="headline-main">Welcome to the Book Nook!</h1>
-
-  <section class="user-search-form">
-        <form action="{{ url_for('search')}}" method="POST">
-            <label for="query">Search our book collection</label>
-            <input type="text" name="query" id="query" minlength="3" required>
-            <label for="query">Type in name or author for the book you're looking for</label>
-            <input class="buttons" type="submit" value="Search">
-
-
-        </form>
-
-    </section>
-    <section>
-<div class="welcome-info-boxes">
-    <div>
-        <a href="{{ url_for('books') }}">
-            <i class="fas fa-book-open"></i>
-        </a><p class="headline-mini">Find a book</p>
-        <p>Are you looking for a particular book? Check out our library to find it or find a new favorite!</p>
-    </div>
-    <div>
-        <a href="{{ url_for('login') }}">
-            <i class="fas fa-user-friends"></i>
-        </a>
-        <p class="headline-mini">Add a book</p>
-        <p>Log in to add your own books to our library and start your own collection!</p>
-    </div>
-    <div>
-        <a href="{{ url_for('register') }}">
-            <i class="fas fa-user-plus"></i>
-        </a><p class="headline-mini">Join our community</p>
-        <p>As a member you can create your own library of books as well as finding books from other member!</p>
-    </div>
-
-</div>
-
-    </section>
-    <section>
-
+<section class="user-search-form">
+    <form action="{{ url_for('search')}}" method="POST">
+        <label for="query">Search our book collection</label>
+        <input type="text" name="query" id="query" minlength="3" required>
+        <label for="query">Type in name or author for the book you're looking for</label>
+        <input class="buttons" type="submit" value="Search">
+    </form>
+</section>
+<section>
+    <div class="welcome-info-boxes">
         <div>
-            <h1 class="headline-medium">Top 3 books</h1><p>Want more books? Find all books on our <a href="{{ url_for('books') }}">collection site <i class="fas fa-arrow-right"></i></a></p>
+            <a href="{{ url_for('books') }}">
+                <i class="fas fa-book-open"></i>
+            </a>
+            <p class="headline-mini">Find a book</p>
+            <p>Are you looking for a particular book? Check out our library to find it or find a new favorite!</p>
         </div>
-        <section class="book-collection">
-    {% for book in books %}
-    <div class="book-box">
-        <img class="book-image" src="{{ book.book_image_url }}">
-        <p class="book-title"> {{ book.book_name }}</p>
-        <p>By</p>
-        <p>{{ book.book_author }}</p>
-        <p><a href="{{ url_for('show_category', book_category=book.book_category) }}">{{ book.book_category }}</a></p>
-       
-  
-    <span>
-        <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">Read more <i class="fas fa-arrow-right"></i></a>
-    </span>
-   
-
+        <div>
+            <a href="{{ url_for('login') }}">
+                <i class="fas fa-user-friends"></i>
+            </a>
+            <p class="headline-mini">Add a book</p>
+            <p>Log in to add your own books to our library and start your own collection!</p>
+        </div>
+        <div>
+            <a href="{{ url_for('register') }}">
+                <i class="fas fa-user-plus"></i>
+            </a>
+            <p class="headline-mini">Join our community</p>
+            <p>As a member you can create your own library of books as well as finding books from other member!</p>
+        </div>
     </div>
-    {% endfor %}
-
+</section>
+<section>
+    <div>
+        <h1 class="headline-medium">Top 3 books</h1>
+        <p>Want more books? Find all books on our <a href="{{ url_for('books') }}">collection site <i
+                    class="fas fa-arrow-right"></i></a></p>
+    </div>
+    <section class="book-collection">
+        {% for book in books %}
+        <div class="book-box">
+            <img class="book-image" src="{{ book.book_image_url }}">
+            <p class="book-title"> {{ book.book_name }}</p>
+            <p>By</p>
+            <p>{{ book.book_author }}</p>
+            <p><a href="{{ url_for('show_category', book_category=book.book_category) }}">{{ book.book_category }}</a>
+            </p>
+            <span>
+                <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">Read more <i
+                        class="fas fa-arrow-right"></i></a>
+            </span>
+        </div>
+        {% endfor %}
     </section>
-
-{% endblock%}
+    {% endblock%}

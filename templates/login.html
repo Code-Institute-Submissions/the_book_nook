@@ -2,25 +2,22 @@
 {% block content %}
 <section>
     <div>
-    <h1 class="headline-main">Log In</h1>
-    <p>Welcome back! Log in below to get directed to your profile page</p>
+        <h1 class="headline-main">Log In</h1>
+        <p>Welcome back! Log in below to get directed to your profile page</p>
     </div>
     <div class="registration-form">
-
         <form method="POST" action="{{ url_for('login') }}">
             <label class="headline-mini" for="username">Username:</label>
             <input type="text" name="username" id="username" required>
-
             <label class="headline-mini" for="password">Password:</label>
             <input type="password" name="password" id="password" required>
             <input class="buttons" type="submit" value="Log In">
             <a class="buttons" href="{{ url_for('index') }}">Cancel</a>
-
         </form>
     </div>
-     <div>
-         <h2>Not a member? 
-             <a href="{{ url_for('register') }}">Register Here</a></h2>
-        </div>
+    <div>
+        <h2>Not a member?
+            <a href="{{ url_for('register') }}">Register Here</a></h2>
+    </div>
 </section>
 {% endblock %}

@@ -1,23 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-
- <section>
-     <h1 class="headline-medium">Categories</h1>
-<a class="buttons" href="{{ url_for('add_category') }}"><h2>Add New Category</h2></a>
-
-   <div class="main-categories">
-{% for category in categories %}
-<div class="category-box">
-    <p>
-        <h2 class="headline-medium">{{ category.book_category }}</h2>
-    </p>
-    <p class="button-box">
-        <a class="book-buttons" href="{{ url_for('edit_category', category_id=category._id) }}">Edit Category</a>
-     <a class="book-buttons" href="{{ url_for('delete_category', category_id=category._id) }}">Delete Category</a>
-    </p>
-</div>
-{% endfor %}
-</div>
- </section>
-
+<section>
+    <h1 class="headline-medium">Categories</h1>
+    <a class="buttons" href="{{ url_for('add_category') }}">
+        <h2>Add New Category</h2>
+    </a>
+    <div class="main-categories">
+        {% for category in categories %}
+        <div class="category-box">
+            <p>
+            <h2 class="headline-medium">{{ category.book_category }}</h2>
+            </p>
+            <p class="button-box">
+                <a class="book-buttons" href="{{ url_for('edit_category', category_id=category._id) }}">Edit
+                    Category</a>
+                <a class="book-buttons" href="{{ url_for('delete_category', category_id=category._id) }}">Delete
+                    Category</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

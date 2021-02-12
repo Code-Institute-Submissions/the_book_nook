@@ -1,41 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="top-page-headline-section">
+ 
+<a class="buttons" href="{{ url_for('books') }}"><i class="fas fa-arrow-left"></i> Back to book collection</a>
+ 
+</div>
 
-    <a class="buttons" href="{{ url_for('books') }}"><i class="fas fa-arrow-left"></i> Back to book collection</a>
-    <section class="book-collection">
-        {% for book in books %}
-        <div class="book-box">
-          
-            <div class="image-and-text">
-                <span>
-                    <img class="book-image" src="{{ book.book_image_url }}">
-                </span>
-                <span class="text">
-                    <p class="book-title"> {{ book.book_name }}</p>
-                    <p>By </p><p class="book-info-bold">{{ book.book_author }}</p>
-                    <p class="book-info-bold"><a href="{{ url_for('show_category', book_category=book.book_category) }}">{{ book.book_category }}</a></p>
-                   
-                    <p>Added by: {{ book.created_by }} </p>
-                    {% if session.user %}
-                    <p class="heart-like">
+<section class="book-collection">
+    {% for book in books %}
+    <div class="book-box">
+        <div class="image-and-text">
+            <span>
+                <img class="book-image" src="{{ book.book_image_url }}">
+            </span>
+            <span class="text">
+                <p class="book-title"> {{ book.book_name }}</p>
+                <p>By </p>
+                <p class="book-info-bold">{{ book.book_author }}</p>
+                <p class="book-info-bold"><a
+                        href="{{ url_for('show_category', book_category=book.book_category) }}">{{ book.book_category }}</a>
+                </p>
+                <p>Added by: {{ book.created_by }} </p>
+                {% if session.user %}
+                <p class="heart-like">
                     <i class="like fa fa-heart" aria-hidden="True"></i>
                     {{ book.likes }} like this book
-                    </p>
-                
-                    {% endif %}
-                </span>
-            </div>
-            <div>
-                 <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-           <span>
-            {% if session.user | lower == book.created_by | lower %}
-                <a class="book-buttons" href="{{ url_for('edit_book', book_id=book._id) }}"><i class="fas fa-pencil-alt"></i> Edit Book</a>
-                <a class="book-buttons" href="{{ url_for('delete_book', book_id=book._id) }}"><i class="fas fa-trash-alt"></i> Delete Book</a>
+                </p>
+                {% endif %}
             </span>
-            {% endif %}
         </div>
-        {% endfor %}
-    </section>
-
+        <div>
+            <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">Read More <i
+                    class="fas fa-arrow-right"></i></a>
+        </div>
+        <span>
+            {% if session.user | lower == book.created_by | lower %}
+            <a class="book-buttons" href="{{ url_for('edit_book', book_id=book._id) }}"><i
+                    class="fas fa-pencil-alt"></i> Edit Book</a>
+            <a class="book-buttons" href="{{ url_for('delete_book', book_id=book._id) }}"><i
+                    class="fas fa-trash-alt"></i> Delete Book</a>
+        </span>
+        {% endif %}
+    </div>
+    {% endfor %}
+</section>
 {% endblock %}

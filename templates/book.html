@@ -12,21 +12,21 @@
                 <p>by {{ book.book_author }}</p>
                 <a href="{{ url_for('show_category', book_category=book.book_category) }}" class="single-book-category">
                     {{ book.book_category }}
+                </a>
+                {% if session.user %}
+                <p class="single-created-by">{{ book.created_by }} wrote:</p>
+                {% endif %}
+                <p class="single-book-description">{{ book.book_description }}
+                </p>
+                {% if session.user %}
+                <p>
+                    <a href="{{ url_for('like_book', book_id=book._id) }}">
+                        <i class="fa fa-heart"></i>
                     </a>
-                    {% if session.user %}
-                    <p class="single-created-by">{{ book.created_by }} wrote:</p>
-                    {% endif %}
-                    <p class="single-book-description">{{ book.book_description }}
-                    </p>
-                    {% if session.user %}
-                    <p>
-                        <a href="{{ url_for('like_book', book_id=book._id) }}">
-                            <i class="fa fa-heart"></i>
-                        </a>
-                        {{ book.likes }}
-                    </p>
-                    {% endif %}
-                <span>
+                    {{ book.likes }} like this book
+                </p>
+                {% endif %}
+                <span class="single-book-edit-delete-section">
                     {% if session.user | lower == book.created_by | lower %}
                     <a class="book-buttons" href="{{ url_for('edit_book', book_id=book._id) }}"><i
                             class="fas fa-pencil-alt"></i> Edit Book</a>
@@ -37,25 +37,18 @@
             </span>
         </div>
     </div>
-
     <div class="comment-box">
-
         <h1 class="headline-medium">Comments by users: </h1>
         {% for comment in book.book_comment %}
         <p class="book-comment-section">{{ comment }}</p>
         {% endfor %}
     </div>
-
     <div class="add-edit-book-form">
         <form method="POST" action="{{ url_for('add_comment', book_id=book._id) }}">
             <label for="book_comment">Give us your thoughts about the book!</label>
-
             <textarea type="text" name="book_comment" id="book_comment" maxlength="500" required></textarea>
             <input class="buttons" type="submit" value="Submit">
         </form>
-
     </div>
-
 </section>
-
 {% endblock %}
