@@ -8,21 +8,22 @@
     <div class="registration-form">
         <form method="POST" action="{{ url_for('register') }}">
             <label class="headline-mini" for="username"> Choose a username:</label>
-            <input type="text" name="username" id="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$">
-            <label class="text-below-form" for="username">Your chosen username must have a minimum length of 5,
-                consisting of letters and/or numbers</label>
+            <input type="text" name="username" id="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+            <label class="text-below-form" for="username">Your username must consist of no less than 5 and no more than 15 letters and/or numbers</label>
             <label class="headline-mini" for="password">Choose a password:</label>
             <input type="password" name="password" id="password" minlength="5" maxlength="15"
-                pattern="^[a-zA-Z0-9]{5,15}$">
-            <label class="text-below-form" for="password">Your chosen password must have a minimum length of 5,
-                consisting of letters and/or numbers</label>
+                pattern="^[a-zA-Z0-9]{5,15}$" required>
+            <label class="text-below-form" for="password">Your username must consist of no less than 5 and no more than 15 letters and/or numbers</label>
             <label class="headline-mini" for="confirm-password">Confirm your password:</label>
             <input id="confirm-password" name="confirm-password" type="password" required>
            
             <input class="buttons" type="submit" value="Register">
-           <a class="reset-buttons" href="{{ url_for('books') }}">Cancel</a>
+           <a class="reset-buttons" href="{{ url_for('index') }}">Cancel</a>
 
         </form>
+    </div>
+    <div>
+        <h2>Already a member? <a href="{{ url_for('login') }}">Log In Here</a></h2>
     </div>
 </section>
 

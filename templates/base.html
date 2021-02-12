@@ -21,8 +21,7 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="navigation-list">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('books') }}">Our Book Collection</a></li>
+                <li><a href="{{ url_for('books') }}">Book Collection</a></li>
                 {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">My Books</a></li>
         

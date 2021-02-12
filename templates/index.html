@@ -42,7 +42,7 @@
     <section>
 
         <div>
-            <h1 class="headline-medium">Top 3 books</h1>
+            <h1 class="headline-medium">Top 3 books</h1><p>Want more books? Find all books on our <a href="{{ url_for('books') }}">collection site <i class="fas fa-arrow-right"></i></a></p>
         </div>
         <section class="book-collection">
     {% for book in books %}
@@ -51,11 +51,11 @@
         <p class="book-title"> {{ book.book_name }}</p>
         <p>By</p>
         <p>{{ book.book_author }}</p>
-        <p><a href="{{ url_for('show_category') }}">{{ book.book_category }}</a></p>
+        <p><a href="{{ url_for('show_category', book_category=book.book_category) }}">{{ book.book_category }}</a></p>
        
   
     <span>
-        <a class="buttons" href="{{ url_for('book', book_id=book._id) }}"><i class="fas fa-arrow-right"></i> View More...</a>
+        <a class="buttons" href="{{ url_for('book', book_id=book._id) }}">Read more <i class="fas fa-arrow-right"></i></a>
     </span>
    
 

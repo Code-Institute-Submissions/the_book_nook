@@ -39,7 +39,7 @@ html, body {
 }
 
 .reset-buttons {
-  background-color: #314027;
+  background-color: #272C23;
   color: lightcoral;
   padding: 10px 40px;
   text-decoration: none;
@@ -51,7 +51,7 @@ html, body {
 }
 
 .book-buttons {
-  background-color: #445043;
+  background-color: #272C23;
   color: #fff;
   padding: 8px 20px;
   display: inline-block;
@@ -62,7 +62,7 @@ html, body {
 }
 
 .buttons:hover, .reset-buttons:hover {
-    color: #ECEEEA;
+    color: #A4AB9F;
 }
 
 .button-box {
@@ -89,7 +89,7 @@ nav {
     margin-left: 15px;
     text-decoration: none;
     font-size: 2vw;
-    border-bottom: #7F917D 3px solid;
+    border-bottom: #A4AB9F 3px solid;
 }
 
 .burger-menu {
@@ -113,7 +113,7 @@ nav {
 }
 
 .logo:hover, .navigation-list li a:hover {
-    color:#7F917D;
+    color:#A4AB9F;
 }
 
  /* -------------------------------------------------- Hero image and headlines */ 
@@ -132,6 +132,7 @@ nav {
     font-size: 4vw;
     letter-spacing: 5px;
     text-shadow: 2px 2px 10px;
+    margin-top: 5vh;
 }
 
 .headline-medium {
@@ -148,6 +149,10 @@ nav {
 a {
     text-decoration: none;
     color: #000;
+}
+
+a:hover {
+    color: #A4AB9F;
 }
 
 /* ------------------------------------------------- Search form */ 
@@ -197,10 +202,11 @@ a {
 .book-collection {
     width: 95%;
     margin: auto;
-    background-color: #7F917D;
+    background-color: #A4AB9F;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    border: 1px solid #000;
 }
 
 .book-box {
@@ -223,7 +229,7 @@ a {
 /* ------------------------------------------ Single Book View */ 
 
 .single-book-box {
-    background-color: #7F917D;
+    background-color: #A4AB9F;
     width: 70%;
     margin: auto;
     margin-top: 20vh;
@@ -256,25 +262,25 @@ a {
     font-size: 20px;
 }
 
-.single-book-description {
-    margin: 10vh 0 10vh 0;
-    font-size: 16px;
+.single-created-by {
+    font-size: 14px;
+    margin-top: 5vh;
 }
 
-
-.single-created-by {
-    text-align: right;
-    margin-top: 10px;
-    font-size: 20px;
+.single-book-description {
+    margin: 0 0 15vh 7.5vh;
+    font-size: 18px;
 }
 
 .comment-box {
     width: 70%;
     margin: auto;
-    background-color: lightpink;
-    border: 1px solid #000;
+    background-color: #A4AB9F;
     margin-top: 5vh;
+}
 
+.book-comment-section {
+    margin-top: 3vh;
 }
 
 /* ---------------------------------------- Add Book User Form */
@@ -299,7 +305,7 @@ label {
     height: 3vh;
 }
 
-#book_description {
+#book_description, #book_comment {
     height: 20vh;
     width: 100%;
 }
@@ -356,7 +362,7 @@ label {
 footer {
     height: 7.5vh;
     width: 100%;
-    background-color: #445043;
+    background-color: #272C23;
     display: flex;
     justify-content: space-around;
     align-items: center;

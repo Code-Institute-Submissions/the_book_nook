@@ -46,11 +46,10 @@ def book(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("book.html", book=book)
 
-
 # Collect and Show Category
-@app.route("/show_category")
-def show_category():
-    books = mongo.db.books.find()
+@app.route("/show_category/<book_category>")
+def show_category(book_category):
+    books = mongo.db.books.find({"book_category": book_category})
     return render_template("show_category.html", books=books)
 
 
