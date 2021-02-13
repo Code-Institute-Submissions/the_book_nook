@@ -17,21 +17,21 @@
                 <i class="fas fa-book-open"></i>
             </a>
             <p class="headline-mini">Find a book</p>
-            <p>Are you looking for a particular book? Check out our library to find it or find a new favorite!</p>
+            <p>Are you looking for a particular book? Check out our library collection to find it or why not find a new favorite!</p>
         </div>
         <div>
             <a href="{{ url_for('login') }}">
                 <i class="fas fa-user-friends"></i>
             </a>
-            <p class="headline-mini">Add a book</p>
-            <p>Log in to add your own books to our library and start your own collection!</p>
+            <p class="headline-mini">Log In</p>
+            <p>Log in to add your own books and start your own book collection!</p>
         </div>
         <div>
             <a href="{{ url_for('register') }}">
                 <i class="fas fa-user-plus"></i>
             </a>
             <p class="headline-mini">Join our community</p>
-            <p>As a member you can create your own library of books as well as finding books from other member!</p>
+            <p>Add your own books as well as comment/like the others books from the collection</p>
         </div>
     </div>
 </section>
@@ -45,6 +45,9 @@
     <section class="book-collection">
         {% for book in books %}
         <div class="book-box">
+                <p>  
+            {{ book.likes }} like this book 
+        </p>
             <img class="book-image" src="{{ book.book_image_url }}">
             <p class="book-title"> {{ book.book_name }}</p>
             <p>By</p>
