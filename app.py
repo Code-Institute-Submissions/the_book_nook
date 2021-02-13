@@ -46,6 +46,7 @@ def book(book_id):
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("book.html", book=book)
 
+
 # Collect and Show Category
 @app.route("/show_category/<book_category>")
 def show_category(book_category):
@@ -102,11 +103,11 @@ def login():
         if existing_user:
             # checks that password match input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")): 
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
 
             else:
                 flash("Sorry, username and/or password is incorrect")
@@ -125,7 +126,7 @@ def profile(username):
     books = mongo.db.books.find()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-   
+
     return render_template("profile.html", username=username, books=books)
 
 
