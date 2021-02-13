@@ -10,6 +10,7 @@
         <input class="buttons" type="submit" value="Search">
     </form>
 </section>
+{% if books %}
 <section class="book-collection">
     {% for book in books %}
     <div class="book-box">
@@ -40,5 +41,13 @@
         {% endif %}
     </div>
     {% endfor %}
-</section>
+   </section>
+   {% else %}
+     <div><h3 class="headline-medium">Sorry, No Results Found</h3>
+        {% if session.user %}
+        <p>Book not in collection? Why don't you add it! <a href="{{ url_for('add_book') }}"><i class="fas fa-arrow-right"></i></a></p>
+        {% endif %}
+    </div>
+    {% endif %}
+ 
 {% endblock %}
