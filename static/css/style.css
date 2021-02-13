@@ -257,16 +257,18 @@ a:hover {
 
 .single-book-category {
     font-size: 20px;
+    margin-bottom: 5vh;
 }
 
 .single-created-by {
     font-size: 14px;
-    margin-top: 5vh;
+    margin-top: 3vh;
 }
 
 .single-book-description {
-    margin: 0 0 15vh 0;
     font-size: 18px;
+    margin: 3vh;
+    margin-bottom: 10vh;
 }
 
 .single-book-edit-delete-section {
@@ -283,7 +285,8 @@ a:hover {
 }
 
 .book-comment-section {
-    margin-top: 3vh;
+    margin: 3vh;
+    text-align: left;
 }
 
 /* ---------------------------------------- Add & Edit Book User Form */

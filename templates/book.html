@@ -10,11 +10,11 @@
             <span class="single-text">
                 <p class="single-book-title">{{ book.book_name }}</p>
                 <p>by {{ book.book_author }}</p>
-                <a href="{{ url_for('show_category', book_category=book.book_category) }}" class="single-book-category">
+                <p class="single-book-category"><a href="{{ url_for('show_category', book_category=book.book_category) }}">
                     {{ book.book_category }}
-                </a>
+                </a></p>
                 {% if session.user %}
-                <p class="single-created-by">{{ book.created_by }} wrote:</p>
+                <p class="single-created-by">{{ book.created_by }} word about the book:</p>
                 {% endif %}
                 <p class="single-book-description">{{ book.book_description }}
                 </p>
@@ -39,26 +39,30 @@
     </div>
     <div class="comment-box">
         <h1 class="headline-medium">Comments by users: </h1>
-        {% if comment %}
+      {% if book.book_comment %}
         {% for comment in book.book_comment %}
-        <p class="book-comment-section">{{ comment }}</p>
+        <p class="book-comment-section"><i class="fas fa-comment"></i> {{ comment }}</p>
         {% endfor %}
-        {% else %}
+
+       {% else %}
       
-        <p>Sorry, there are no comments for this yet</p>
-          {% if session.user %}
+        <p>Sorry, there are no comments for this book yet</p>
+       {% if session.user %}
         <p>What do you think about this book? Add your comment below</p>
+      {% endif %}
         {% endif %}
-       
     </div>
-    
+   
+    {% if session.user %}
     <div class="add-edit-book-form">
         <form method="POST" action="{{ url_for('add_comment', book_id=book._id) }}">
             <label for="book_comment">Give us your thoughts about the book!</label>
             <textarea type="text" name="book_comment" id="book_comment" maxlength="500" required></textarea>
             <input class="buttons" type="submit" value="Submit">
+             {% endif %}
         </form>
+        
     </div>
-     {% endif %}
+  
 </section>
 {% endblock %}
