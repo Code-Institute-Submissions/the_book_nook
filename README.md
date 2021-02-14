@@ -54,7 +54,7 @@ Simple design throughout page with green as the baseline color with accent color
 
 # Features
 - Visible on all pages:
-  - Navigation bar, with links displaying as dropdown feature on mobile views.
+  - Navigation bar, with all links except logo displaying as dropdown feature on mobile views.
     - For **visitors** displaying links to 'Logo', 'Book Collection', 'Register' and 'Login'.
     - For **logged in users** navigation bar links 'Register' and 'Login' are replaced with 'My Books' and 'Log Out'. 
     - For **admin** the navigation bar is the same as for logged in users with the added link to 'Manage Categories'
@@ -84,25 +84,26 @@ Simple design throughout page with green as the baseline color with accent color
 - [Python](https://www.python.org/)
 
 ### Libraries and Frameworks
-- [Balsamiq Wireframes]([[https://balsamiq.com/wireframes/](https://en.wikipedia.org/wiki/Balsamiq#Balsamiq_Wireframes)) 
+- [Balsamiq Wireframes](https://balsamiq.com/wireframes/)
   - was used to help create mockup and create UX-design for website.
 - [Color Picker](https://htmlcolorcodes.com/) 
   - was used to choose colors for site
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-- [Font Awesome]([https://fontawesome.com/](https://fontawesome.com/)) 
-  - is used for the fonts on index-page
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) 
+- library was used to build the web application
+- [Font Awesome](https://fontawesome.com/) 
+  - was used for the fonts on index-page
 - [GitHub](https://github.com/) 
   - was used to store the projects code after being pushed from Git.
 - [Gidpod](https://www.gitpod.io/) 
   - was used for version control by using the Gitpod terminal to commit and push to Github.
-- [Google Fonts]([https://fonts.google.com/](https://fonts.google.com/)) 
+- [Google Fonts](https://fonts.google.com/)
   - was used to import font 'Noto Sans' which was used throughout site
-- [Heroku]() - 
+- [Heroku](https://www.heroku.com/home)
   - was used to deploy site.
 - [JQuery](https://jquery.com/) 
   - was used when writing Javascript code.
 - [MongoDB]() 
-  - was used as database.
+  - was used for database storage.
 - [Stackedit](https://stackedit.io) 
   - was used to write Readme-file. 
 
@@ -232,8 +233,9 @@ Google Dev Tools Lighthouse was run to check accessibility of page [view here]()
 # Deployment
 
 ### Heroku Deployment
-
-This project has been deployed to Heroku. Automated pushes were enabled from my GitHub repository to Heroku. The following steps were taken for setting up deployment on Heroku:
+Github was used to create the repository and for storing the code, and was connected to Heroku for automated pushes to Heroku.
+This project has been deployed to Heroku. 
+The following steps were taken for setting up deployment on Heroku:
 
 1.  In GitPod IDE create requirements.txt and Procfile file: 
 - Create requirements.txt file: 
@@ -281,13 +283,17 @@ This project has been deployed to Heroku. Automated pushes were enabled from my 
 https://stackoverflow.com/questions/51822192/trying-javascript-to-have-my-flash-my-message-disappear-after-a-few-seconds-afte) 
 
 ### Media
--   Hero Photo by [Syd Wachs](https://unsplash.com/@videmusart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-- Book images are users inputs from various websites.  
+- Hero Photo by [Syd Wachs](https://unsplash.com/@videmusart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+- Book images are users inputs from various websites
 
 ### Own Reflections 
 
 
 ### Acknowledgements
 - Thank you to my mentor for valuable help and input throughout the project. He gave me great input helping me to better understand the python language. 
+
+### Disclaimer
+
+- The content of this website, including the images used, are for educational purposes only.
 
 > Written with [StackEdit](https://stackedit.io/).
