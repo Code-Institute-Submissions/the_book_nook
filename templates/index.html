@@ -2,6 +2,7 @@
 {% block content %}
 <div class="hero-image"></div>
 <h1 class="headline-main">Welcome to the Book Nook!</h1>
+<p>Your online community for finding and adding your favorite books!</p>
 <section class="user-search-form">
     <form action="{{ url_for('search')}}" method="POST">
         <label for="query">Search our book collection</label>
@@ -24,14 +25,14 @@
                 <i class="fas fa-user-friends"></i>
             </a>
             <p class="headline-mini">Log In</p>
-            <p>Log in to add your own books and start your own book collection!</p>
+            <p>Log in to start your own book collection!</p>
         </div>
         <div>
             <a href="{{ url_for('register') }}">
                 <i class="fas fa-user-plus"></i>
             </a>
             <p class="headline-mini">Join our community</p>
-            <p>Add your own books as well as comment/like the others books from the collection</p>
+            <p>Add your own books as well as comment/like the other books from the collection</p>
         </div>
     </div>
 </section>
