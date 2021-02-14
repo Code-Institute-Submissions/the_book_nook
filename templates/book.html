@@ -59,7 +59,7 @@
         <form method="POST" action="{{ url_for('add_comment', book_id=book._id) }}">
             <label for="book_comment">Give us your thoughts about the book!</label>
             <textarea type="text" name="book_comment" id="book_comment" maxlength="500" required></textarea>
-            <input class="buttons" type="submit" value="Submit">
+            <input class="buttons" type="submit" value="Add Comment">
              {% endif %}
         </form>
         

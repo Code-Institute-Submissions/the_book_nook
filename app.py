@@ -182,7 +182,7 @@ def edit_book(book_id):
 @app.route("/like_book/<book_id>", methods=["GET", "POST"])
 def like_book(book_id):
     mongo.db.books.update({"_id": ObjectId(book_id)}, {"$inc": {"likes": 1}})
-    book = book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("book.html", book=book)
 
 
@@ -196,10 +196,11 @@ def add_comment(book_id):
         mongo.db.books.update(
             {"_id": ObjectId(book_id)}, {"$push": comment})
         flash("Comment Added!")
-        return redirect(url_for('books'))
+        book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+        return render_template("book.html", book=book)
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    return render_template("books.html", book=book)
+    return render_template("book.html", book=book)
 
 
 # Delete Book

@@ -25,7 +25,7 @@
         <label for="book_image_url">Add link to image here (must be an online source)</label>
         <input value="{{ book.book_image_url }}" id="book_image_url" name="book_image_url" type="text">
         <p class="text-below-form">Link to image must be an online source, ending with .jpg or .gif</p>
-        <input class="buttons" type="submit" value="Submit">
+        <input class="buttons" type="submit" value="Edit Book">
         <a class="reset-buttons" href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
     </form>
 </div>
