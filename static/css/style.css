@@ -25,7 +25,7 @@ html, body {
 
 .buttons {
   background-color: #272C23;
-  color: #fff;
+  color: #EFF1EE;
   padding: 10px 40px;
   display: inline-block;
   border-radius: 4px;
@@ -36,8 +36,8 @@ html, body {
 }
 
 .reset-buttons {
-  background-color: #272C23;
-  color: lightcoral;
+  background-color: #A4AB9F;
+  color: #EFF1EE;
   padding: 10px 40px;
   text-decoration: none;
   display: inline-block;
@@ -49,7 +49,18 @@ html, body {
 
 .book-buttons {
   background-color: #272C23;
-  color: #fff;
+  color: #EFF1EE;
+  padding: 8px 20px;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  margin: 3px;
+}
+
+.reset-book-buttons {
+  background-color: #A4AB9F;
+  color: #EFF1EE;
   padding: 8px 20px;
   display: inline-block;
   border-radius: 4px;
@@ -156,13 +167,14 @@ a:hover {
 /* ------------------------------------------------- Search form */ 
 
 .user-search-form {
-    width: 60%;
+    width: 80%;
     margin: auto;
     text-align: center;
     padding: 5vh;}
 
 #query {
     width: 80%;
+    height: 4vh;
     margin: auto;
 }
 
@@ -221,6 +233,7 @@ a:hover {
 
 .book-image {
     height: 25vh;
+    max-width: 30vh;
     margin-top: 2vh;
 }
 
@@ -247,6 +260,7 @@ a:hover {
 
 .single-book-image {
     height: 70vh;
+    max-width: 60vh;
     margin: 3vh;
 }
 
@@ -469,6 +483,7 @@ body {
 
 .single-book-image {
     height: 25vh;
+    width: auto;
 }
 
 .main-categories {
