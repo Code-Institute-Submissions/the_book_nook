@@ -167,8 +167,7 @@ def edit_book(book_id):
             "book_author": request.form.get("book_author"),
             "book_category": request.form.get("book_category"),
             "book_description": request.form.get("book_description"),
-            "book_image_url": request.form.get("book_image_url"),
-            "created_by": session["user"]
+            "book_image_url": request.form.get("book_image_url")
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
         flash("Book Updated!")
