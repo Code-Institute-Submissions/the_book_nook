@@ -124,7 +124,8 @@ Noto Sans font from Google Fonts was used on the site.
 ## Testing
 
 - Html-code tested with [W3C Markup Validator](https://validator.w3.org/)
-- CSS-code tested with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+(Got error messages regarding missing headings, but had no time before deadline to update/change them)
+- CSS-code tested with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
 - Python code tested with [Pep8online](http://pep8online.com/)
 - Responsiveness of website was checked using [Am I Responsive?](http://ami.responsivedesign.is/)
 
