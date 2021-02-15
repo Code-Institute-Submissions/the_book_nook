@@ -26,16 +26,27 @@ The site owners goal is to gather a community of book readers, sharing favorite 
 .
 #### Admin user UX stories:
 - As an admin I want to easily find an overview over the different categories of books on the site.
-- As an admin I want to easily view, add, edit or delete any categories. 
+- As an admin I want to easily view, add, edit or delete any categories.
+- As an admin I want to easily view, edit and/or delete any books in the collection. 
 
 
 ### Site Owners Stories
 - As a site owner I want the users to easily navigate and interact throughout the site.
-- I want the users to sign up to the community to add their own books to the library, thereby making the community and library grow bigger.
+- I want the users to easily sign up to the community.
+- I want the users to easily add their own books to the library, thereby making the community and library grow bigger.
  
 ## Design
 
-Simple design throughout page with green as the baseline color with accent colors of grey and white. Continued structure throughout site with navigation bar and footer.
+### Colors 
+
+Simple design throughout page with green as the baseline color with accent colors of grey and white. 
+Continued structure throughout site with navigation bar and footer. 
+
+### Font
+
+Noto Sans font from Google Fonts was used on the site. 
+
+
 
 ### Wireframes
 - Index page - [View](static/wireframes/index.png)
@@ -59,20 +70,22 @@ Simple design throughout page with green as the baseline color with accent color
     - For **logged in users** navigation bar links 'Register' and 'Login' are replaced with 'My Books' and 'Log Out'. 
     - For **admin** the navigation bar is the same as for logged in users with the added link to 'Manage Categories'
   - Footer bar with email address to contact site-manager and social media links to Instagram and Facebook. 
--   Index page  a search bar for visitors and logged in users to use. Below search bar visitors/users will find information about the site and links to book collection, login and register pages. And finally a generated list of top three favorite books on the site.
+- Index page  a search bar for visitors and logged in users to use. Below search bar visitors/users will find information about the site and links to book collection, login and register pages. And finally a generated list of top three favorite books on the site.
 - Book Collection page displaying all books added by users in alphabetical order in collection. On top of page visitors/users will also find a search bar. 
--   User registration functionality
--   Log in / out functionality
--   Profile page showing list of all books added by the user, as well as the ability to add a new book and edit/delete their own added books. 
+- When clicking on a books Category, all books within same category will be collected and shown.
+- User registration functionality
+- Log in / out functionality
+- Profile page showing list of all books added by the user, as well as the ability to add a new book and edit/delete their own added books. 
 - Categories site allowing admin to view all categories as well as add a new category and edit/delete existing categories. 
 - Admin also have the possibility to edit/delete any book in the collection regardless who created the book.
--   Mobile responsive design.
+- Mobile responsive design.
 
 ### Future features to implement
 - Add a check so that a user can only like a book once, clicking again will 'unlike' book. 
 - Add user-name to the comments and possibility to edit and delete own comments.  
 - Affiliate link under each book.
 - Ability to add more than one category to each book.
+- Add a check when user clicks delete, asking user to confirm deletetion.
 
 ## Technologies Used
 
@@ -89,7 +102,7 @@ Simple design throughout page with green as the baseline color with accent color
 - [Color Picker](https://htmlcolorcodes.com/) 
   - was used to choose colors for site
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) 
-- library was used to build the web application
+  - library was used to build the web application
 - [Font Awesome](https://fontawesome.com/) 
   - was used for the fonts on index-page
 - [GitHub](https://github.com/) 
@@ -134,23 +147,23 @@ Google Dev Tools Lighthouse was run to check accessibility of page [view here]()
   
 #### Index Site
 - Search function working correctly, user is transported to search-page where books from search result is listed.
-    - If no results a message is shown instead that no books were found. 
+    - If no results a message is shown that no books were found. 
 - A list showing top 3 books of site.
   - All three book showing image, title, author, category and 'Read more'-button.
   - Beneath 'Top 3'-headline text and link is shown that transport visitor to book collection to see all books. 
 
 #### Book Collection
 - Search function working correctly, user is transported to search-page where books from search result is listed.
-  - If no results a message appear that no books were found. 
+  - If no results a message is shown that no books were found. 
 - Book collection is shown in alphabetical order based on book title. 
   - Visitor User Ux Stories:
     - Book image, title, author, category is shown to user.
     - Button with text 'Read more' is shown beneath every book, transporting user to Single Book Page.
   - Logged In User UX Stories:
-    - A heart is shown above image with the number of likes a book have, when heart is clicked counter is incremented with one.
+    - A counter is shown above image with text 'like this book' following showing how many likes a book has.
     - Text showing which user added book is shown in low right corner of every book information.
   - Logged In Users Own Books UX Stories:
-  - Two buttons are shown under every book that was created by user; 'Edit Book' and 'Delete Book', transporting user to 'Edit Book'-page alternatively 'Delete Book'-page. 
+    - Two buttons are shown under every book that was created by user; 'Edit Book' and 'Delete Book', transporting user to 'Edit Book'-page alternatively 'Delete Book'-page. 
 
 #### Single Book Page
 - Visitor User UX Stories:
@@ -169,7 +182,7 @@ Google Dev Tools Lighthouse was run to check accessibility of page [view here]()
   - If 'username' is already taken, a flash message appears informing user to choose different username.
   - If 'password' and 'confirm password' is not matching a flash message appears asking user to ensure that password and confirm password is a match.
 - If visitor clicks 'Cancel'-button they are transported back to 'Index'-site.
-- At bottom of page user finds link to 'Log In'-page if already a member.
+- At bottom of page user finds link to 'Log In'-page which transports user to 'Log In'-page.
 - Upon successful registration, the newly registered user is transported to its 'profile'-page.
 
 #### Log In
@@ -281,6 +294,8 @@ The following steps were taken for setting up deployment on Heroku:
 - 'CI's Miniproject - Putting It All Together' was used to help with the code to set up app as well as app.py coding for route and functionality for the register - login - search - add/edit/delete_book - add/edit/delete_category functions. 
 - Javascript to make flash-message fadeout after appearing was found on [StackOverflow](
 https://stackoverflow.com/questions/51822192/trying-javascript-to-have-my-flash-my-message-disappear-after-a-few-seconds-afte) 
+- Help to code for password confirmation was found in CI's Slack Community.
+- Help and input with code for showing all book-categories on click and showing comments beneath books was given by my mentor.
 
 ### Media
 - Hero Photo by [Syd Wachs](https://unsplash.com/@videmusart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
