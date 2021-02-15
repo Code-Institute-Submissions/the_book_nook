@@ -128,9 +128,10 @@ Noto Sans font from Google Fonts was used on the site.
 - Responsiveness of website was checked using [Am I Responsive?](http://ami.responsivedesign.is/)
 
 ![Lighthouse result](static/wireframes/lighthouse.png "Lighthouse Result")
-Google Dev Tools Lighthouse was run to check accessibility of page
 
-### Link Testing 
+- Google Dev Tools Lighthouse was run to check accessibility of page
+
+### Manual Link Testing 
 
 #### Navigation bar 
 - Clicking on the logo transports the user to the start page if on another part of the site
