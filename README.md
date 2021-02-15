@@ -226,11 +226,13 @@ Google Dev Tools Lighthouse was run to check accessibility of page [view here]()
 - Below 'Add Category'-button are all categories presented, each with a 'Edit Category' and 'Delete Category'-button. 
   - When clicking on 'Edit Category'-button admin is transported to new page 'Edit Category.
   - When clicking on Delete the category is instantly deleted. 
+- Admin is also able to edit/delete any other book in collection. 'Edit' and 'Delete'-buttons are visible under all books in Book Collection to admin.
 
 #### Edit Category 
 - Category selected is shown in a form, with the pre-filled field for category name chosen to edit. 
   - On submit category is changed and admin is transported back to 'Category'-page.
   - On Cancel category-name remains as previous and user is transported back to 'Category'-page. 
+
 
 
 ### Further Testing 
@@ -239,9 +241,7 @@ Google Dev Tools Lighthouse was run to check accessibility of page [view here]()
 
 ### Known Bugs
 - The pages something links to http instead of https making site insecure. 
-- Footer is not sticking to bottom at all pages.
 - The hero-image is distorted on iPhone 12.
-
 
 # Deployment
 
@@ -296,13 +296,15 @@ The following steps were taken for setting up deployment on Heroku:
 https://stackoverflow.com/questions/51822192/trying-javascript-to-have-my-flash-my-message-disappear-after-a-few-seconds-afte) 
 - Help to code for password confirmation was found in CI's Slack Community.
 - Help and input with code for showing all book-categories on click and showing comments beneath books was given by my mentor.
+- Help with code to store images was found in CI's Slack Community. 
 
 ### Media
 - Hero Photo by [Syd Wachs](https://unsplash.com/@videmusart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-- Book images are users inputs from various websites
+- Book images are users inputs from various websites URL, since MongoDB is not possible to store images on its own. (For another project will consider another database if having a purpose to store images.)
 
 ### Own Reflections 
-
+- Wished that were even more information regarding writing code for different scenarios. The walk-through project is a good basic but feel I was still lacking the knowledge on basic writing structure when it comes to the coding in app.py. Found great help on Slack as well as hours and hours on Google. 
+Hopefully time and experience will help the feeling of imposter syndrome.  
 
 ### Acknowledgements
 - Thank you to my mentor for valuable help and input throughout the project. He gave me great input helping me to better understand the python language. 
