@@ -306,6 +306,7 @@ https://stackoverflow.com/questions/51822192/trying-javascript-to-have-my-flash-
 - Help with code to store images was found in CI's Slack Community. 
 - Learning flexbox mainly by using [CSS Tricks](https://css-tricks.com/)
 - Code for Buttons from [W3 Schools](https://www.w3schools.com/css/css3_buttons.asp) and then adapting it for my own design and liking.
+- For better overall understanding and learning of Python and Flask: Corey Schaeffers page on [Youtube](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) as well as Dev Ed's channel on [Youtube](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q)
 
 ### Media
 - Hero Photo by [Syd Wachs](https://unsplash.com/@videmusart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
@@ -314,7 +315,7 @@ https://stackoverflow.com/questions/51822192/trying-javascript-to-have-my-flash-
 ### Own Reflections 
 - Wished that were even more information regarding writing code for different scenarios. The walk-through project is a good basic but feel I was still lacking the knowledge on basic writing structure when it comes to the coding in app.py. Found great help on Slack as well as hours and hours on Google. 
 Hopefully time and experience will help the feeling of imposter syndrome.
-- A lot of my build up code were taken from different forums, tutorials, youtube and MongoDb's own site and then collected to write a function of my own, knowing it would not have been possible for me to write the code without extensive research through youtube, forums and tutorials.
+- A lot of my build up code were taken from different forums, tutorials, youtube and MongoDb's own site and then collected to write a function of my own, knowing it would not have been possible for me to write the code without extensive research and help through mongodb's website, Youtube, forums and tutorials. 
 
 ### Acknowledgements
 - Thank you to my mentor for valuable help and input throughout the project. He gave me great input helping me to better understand the python language. 
