@@ -123,8 +123,9 @@ Noto Sans font from Google Fonts was used on the site.
 
 ## Testing
 
-- Html-code tested with W3C Markup Validator
-- CSS-code tested with W3C CSS Validator
+- Html-code tested with [W3C Markup Validator](https://validator.w3.org/)
+- CSS-code tested with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+- Python code tested with [Pep8online](http://pep8online.com/)
 - Responsiveness of website was checked using [Am I Responsive?](http://ami.responsivedesign.is/)
 
 ![Lighthouse result](static/wireframes/lighthouse.png "Lighthouse Result")
@@ -262,7 +263,7 @@ The following steps were taken for setting up deployment on Heroku:
   - '***git add -A***'
   - '***git commit -m "Added requirements.txt and Procfile***' 
   - and lastly '***git push***' to ensure requirements.txt and Procfile are in the GitHub repository 
-    * ! Forgetting these step means Heroku can't find the files in git and won't know how to run or deploy the app)*
+    *! Forgetting these step means Heroku can't find the files in git and won't know how to run or deploy the app)*
 2. Create new app in Heroku:  
   *(If not already create account on Heroku)* 
   - Once registered/logged in go to Dashboard: 
@@ -276,21 +277,25 @@ The following steps were taken for setting up deployment on Heroku:
       - A prompt to find a Github repository to connect to will then be displayed.
       - Enter the repository name for the project and click search.
       - Once the repo has been found, click the **Connect** button.
- 4. Once app is created go to **Settings**: 
+ 4. Once app is connected go to **Settings**: 
   - Choose "**Reveal Config Vars**" *(this is to tell Heroku which variables are used/required)*
     - In the input fields add: 
       - Key: ***IP***, Value: ***0.0.0.0***
       - Key: ***PORT***, Value : ***5000***
-      - Key: ***SECRET_KEY,*** Value: **-->** *!add your secret key here*
-      - Key: ***MONGO_URI***, Value:  **-->** *!this can be found in your MongoDB by going to clusters > connect > connect to your application. In popup window choose Python as language. After choosing language you will see a string just below, copy it and paste it into value. Don't forget to change the <dbname> and <password> in string before saving*
-      - Key: ***MONGO_DBNAME***, Value: **-->** *!Add the database name you want to connect your app to here*
+      - Key: ***SECRET_KEY,*** Value: **-->** *! Add your secret key here*
+      - Key: ***MONGO_URI***, Value:  **-->** *! This can be found in your MongoDB by going to clusters > connect > connect to your application. In popup window choose Python as language. After choosing language you will see a string just below, copy it and paste it into value. Don't forget to change the <dbname> and <password> in string before saving*
+      - Key: ***MONGO_DBNAME***, Value: **-->** *! Add the database name you want to connect your app to here*
  5. After that's done go to the "**Deploy**" tab: 
    - There you will choose "**Enable Automatic Deploys**" and choose deploy branch *(usually master or main)*. 
    - After deployment is finished below you will see "Your app was successfully deployed" and a '**View**'-button that will open your site in a new window-tab.
+   
+   My deployed site: [The Book Nook](https://the-book-nook-ci.herokuapp.com/)
   
 ## Credits
 
 ### Content
+
+- Text below each book admin added was taken from Wikipedia and/or Amazon. 
 
 ### Code 
 - 'CI's Miniproject - Putting It All Together' was used to help with the code to set up app as well as app.py coding for route and functionality for the register - login - search - add/edit/delete_book - add/edit/delete_category functions. 
@@ -299,6 +304,8 @@ https://stackoverflow.com/questions/51822192/trying-javascript-to-have-my-flash-
 - Help to code for password confirmation was found in CI's Slack Community.
 - Help and input with code for showing all book-categories on click and showing comments beneath books was given by my mentor.
 - Help with code to store images was found in CI's Slack Community. 
+- Learning flexbox mainly by using [CSS Tricks](https://css-tricks.com/)
+- Code for Buttons from [W3 Schools](https://www.w3schools.com/css/css3_buttons.asp) and then adapting it for my own design and liking.
 
 ### Media
 - Hero Photo by [Syd Wachs](https://unsplash.com/@videmusart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
@@ -306,7 +313,8 @@ https://stackoverflow.com/questions/51822192/trying-javascript-to-have-my-flash-
 
 ### Own Reflections 
 - Wished that were even more information regarding writing code for different scenarios. The walk-through project is a good basic but feel I was still lacking the knowledge on basic writing structure when it comes to the coding in app.py. Found great help on Slack as well as hours and hours on Google. 
-Hopefully time and experience will help the feeling of imposter syndrome.  
+Hopefully time and experience will help the feeling of imposter syndrome.
+- A lot of my build up code were taken from different forums, tutorials, youtube and MongoDb's own site and then collected to write a function of my own, knowing it would not have been possible for me to write the code without extensive research through youtube, forums and tutorials.
 
 ### Acknowledgements
 - Thank you to my mentor for valuable help and input throughout the project. He gave me great input helping me to better understand the python language. 
