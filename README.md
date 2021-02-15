@@ -123,11 +123,12 @@ Noto Sans font from Google Fonts was used on the site.
 
 ## Testing
 
-- Html-code tested with W3C Markup Validator, view result [here]()
-- CSS-code tested with W3C CSS Validator, view result [here]()
+- Html-code tested with W3C Markup Validator
+- CSS-code tested with W3C CSS Validator
 - Responsiveness of website was checked using [Am I Responsive?](http://ami.responsivedesign.is/)
 
-Google Dev Tools Lighthouse was run to check accessibility of page [view here]()
+![Lighthouse result](static/wireframes/lighthouse.png "Lighthouse Result")
+Google Dev Tools Lighthouse was run to check accessibility of page
 
 ### Link Testing 
 

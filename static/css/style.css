@@ -315,6 +315,7 @@ a:hover {
     margin: auto;
     display: block;
     text-align: left;
+    margin-top: 2vh;
 }
 
 label, input, select, option, textarea {
